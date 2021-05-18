@@ -13,19 +13,35 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  camera.position.set(5, 10, 5);
+  camera.lookAt(scene.position);
+
+  //軸
+  var axes = new THREE.AxisHelper(25);
+  scene.add(axes);
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
   var box = new THREE.Mesh(geometry, material);
-  box.position.z = -5;
+  box.position.z = 5;
   scene.add(box);
   //箱2
-  var geometry2 = new THREE.BoxGeometry(0, 0, 0);
-  var material2 = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+  var geometry2 = new THREE.BoxGeometry(1, 1, 1);
+  var material2 = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
   var box2 = new THREE.Mesh(geometry2, material2);
-  box.position.z = -5;
+  box2.position.x = 0;
+  box2.position.y = 2;
+  box2.position.z = 0;
   scene.add(box2);
+
+  var geometry3 = new THREE.BoxGeometry(1, 1, 1);
+  var material3 = new THREE.MeshPhongMaterial({ color: 0xff0000 ,wireframe: true});
+  var box3 = new THREE.Mesh(geometry3, material3);
+  box3.position.x = 3;
+  box3.position.y = 0;
+  box3.position.z = 0;
+  scene.add(box3);
 
   // 平行光源
   var directionalLight = new THREE.DirectionalLight(0xffffff);
@@ -44,7 +60,9 @@ var init = function() {
 
     // 箱を回転させる
     //box.rotation.x += 0.1;
-    box.rotation.y += 0.1;
+    box.rotation.z += 256;
+    box2.rotation.y -= 0.2;
+    box3.rotation.x -= 0.01;
 
     renderer.render(scene, camera);
   };
