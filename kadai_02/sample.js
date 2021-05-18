@@ -20,12 +20,23 @@ var init = function() {
   var box = new THREE.Mesh(geometry, material);
   box.position.z = -5;
   scene.add(box);
+  //箱2
+  var geometry = new THREE.BoxGeometry(-1, -1, -1);
+  var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+  var box2 = new THREE.Mesh(geometry, material);
+  box.position.z = -5;
+  scene.add(box2);
 
   // 平行光源
   var directionalLight = new THREE.DirectionalLight(0xffffff);
   directionalLight.position.set(1, 1, 1);
   // シーンに追加
   scene.add(directionalLight);
+  // 平行光源2
+  var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+  directionalLight2.position.set(-1, 1, 1);
+  // シーンに追加
+  scene.add(directionalLight2);
 
   // 初回実行
   var update = function() {
