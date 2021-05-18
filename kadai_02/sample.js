@@ -21,7 +21,7 @@ var init = function() {
   box.position.z = -5;
   scene.add(box);
   //箱2
-  var geometry2 = new THREE.BoxGeometry(-1, -1, -1);
+  var geometry2 = new THREE.BoxGeometry(0, 0, 0);
   var material2 = new THREE.MeshPhongMaterial({ color: 0x0000ff });
   var box2 = new THREE.Mesh(geometry2, material2);
   box.position.z = -5;
