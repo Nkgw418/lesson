@@ -60,6 +60,11 @@ var init = function() {
   cone.position.y = 1.5;
   cone.position.z = 2;
 
+  var geometry = new THREE.SphereGeometry( 0.15, 16, 16 );
+  var material = new THREE.MeshBasicMaterial( {color: 0x00ffff} );
+  var sphere = new THREE.Mesh( geometry, material );
+  scene.add( sphere );
+
   // 平行光源
   var directionalLight = new THREE.DirectionalLight(0xffffff);
   directionalLight.position.set(1, 1, 1);
