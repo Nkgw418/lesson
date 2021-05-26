@@ -27,21 +27,42 @@ var init = function() {
   box.position.z = 5;
   scene.add(box);
   //箱2
-  var geometry2 = new THREE.BoxGeometry(1, 1, 1);
-  var material2 = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
-  var box2 = new THREE.Mesh(geometry2, material2);
+  var geometry = new THREE.BoxGeometry(1, 1, 1);
+  var material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+  var box2 = new THREE.Mesh(geometry, material);
   box2.position.x = 0;
   box2.position.y = 2;
   box2.position.z = 0;
   scene.add(box2);
 
-  var geometry3 = new THREE.BoxGeometry(1, 1, 1);
-  var material3 = new THREE.MeshPhongMaterial({ color: 0xff0000 ,wireframe: true});
-  var box3 = new THREE.Mesh(geometry3, material3);
+  var geometry = new THREE.BoxGeometry(1, 1, 1);
+  var material = new THREE.MeshPhongMaterial({ color: 0xff0000 ,wireframe: true});
+  var box3 = new THREE.Mesh(geometry, material);
   box3.position.x = 3;
   box3.position.y = 0;
   box3.position.z = 0;
   scene.add(box3);
+
+  var geometry = new THREE.PlaneGeometry(10,10,16,16);
+  var material = new THREE.MeshPhongMaterial({ color: 0x7fffd4 ,wireframe: true});
+  var plane = new THREE.Mesh(geometry, material);
+  scene.add(plane);
+
+  var geometry = new THREE.CylinderGeometry(0.1,0.1,1,32);
+  var material = new THREE.MeshPhongMaterial({ color: 0x8b4513 });
+  var cylinder = new THREE.Mesh(geometry, material);
+  scene.add(cylinder);
+  cylinder.position.x = -3;
+  cylinder.position.y = 0.05;
+  cylinder.position.z = 2;
+
+  var geometry = new THREE.ConeGeometry(0.5,1.5,32);
+  var material = new THREE.MeshPhongMaterial({ color: 0x008000 });
+  var cone = new THREE.Mesh(geometry, material);
+  scene.add(cone);
+  cone.position.x = -3;
+  cone.position.y = 1;
+  cone.position.z = 2;
 
   // 平行光源
   var directionalLight = new THREE.DirectionalLight(0xffffff);
@@ -54,6 +75,12 @@ var init = function() {
   // シーンに追加
   scene.add(directionalLight2);
 
+  // ラジアンに変換する
+  var radian = rot * Math.PI / 180;
+  // 角度に応じてカメラの位置を設定
+  camera.position.x = 1000 * Math.sin(radian);
+  camera.position.z = 1000 * Math.cos(radian);
+
   // 初回実行
   var update = function() {
     requestAnimationFrame(update);
@@ -63,6 +90,7 @@ var init = function() {
     box.rotation.z += 256;
     box2.rotation.y -= 0.2;
     box3.rotation.x -= 0.01;
+    plane.rotation.x = Math.PI / -2;
 
     renderer.render(scene, camera);
   };
