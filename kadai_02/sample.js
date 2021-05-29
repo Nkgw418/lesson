@@ -129,7 +129,6 @@ var init = function() {
   all.add(table);
   all.add(sphere);
   all.add(axes);
-  //all.castShadow = true;
   scene.add(all);
 
   // 照明を作成
