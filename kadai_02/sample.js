@@ -19,19 +19,18 @@ var init = function() {
   camera.position.set(15,15,15);
   camera.lookAt(scene.position);
 
-
+  //平面
   var plane_g = new THREE.PlaneGeometry(1000,1000);
   var material_pl = new THREE.MeshPhongMaterial({ color: 0x808080 });
-  var plane2 = new THREE.Mesh(plane_g, material_pl);
-  plane2.position.set(0,-5,0);
-  plane2.rotation.set(Math.PI / -2,0,0);
-  plane2.receiveShadow = true;
-  scene.add(plane2);
+  var plane = new THREE.Mesh(plane_g, material_pl);
+  plane.position.set(0,-5,0);
+  plane.rotation.set(Math.PI / -2,0,0);
+  plane.receiveShadow = true;
+  scene.add(plane);
 
   //軸
   var axes = new THREE.AxisHelper(25);
   axes.castShadow = true;
-  scene.add(axes);
 
   // 箱を作成 青
   var box_g = new THREE.BoxGeometry(1, 1, 1);
@@ -39,28 +38,24 @@ var init = function() {
   var box = new THREE.Mesh(box_g, material_b1);
   box.position.set(0,0,5);
   box.castShadow = true;
-  scene.add(box);
 
   //箱2 緑
   var material_b2 = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
   var box2 = new THREE.Mesh(box_g, material_b2);
   box2.position.set(0,2,0);
   box2.castShadow = true;
-  scene.add(box2);
 
   //箱3 赤
   var material_b3 = new THREE.MeshPhongMaterial({ color: 0xff0000 ,wireframe: true});
   var box3 = new THREE.Mesh(box_g, material_b3);
   box3.position.set(3,0,0);
   box3.castShadow = true;
-  scene.add(box3);
 
-  //平面
-  var plane_g = new THREE.PlaneGeometry(16,16,16,16);
-  var material_pl = new THREE.MeshPhongMaterial({ color: 0x7fffd4 ,wireframe: true});
-  var plane = new THREE.Mesh(plane_g, material_pl);
-  plane.rotation.set(Math.PI / -2,0,0);
-  scene.add(plane);
+  //グリッド
+  var glid_g = new THREE.PlaneGeometry(16,16,16,16);
+  var material_gl = new THREE.MeshPhongMaterial({ color: 0x7fffd4 ,wireframe: true});
+  var glid = new THREE.Mesh(glid_g, material_gl);
+  glid.rotation.set(Math.PI / -2,0,0);
 
   var cyl_g = new THREE.CylinderGeometry(0.5,0.5,3,16);
   var material_cy = new THREE.MeshPhongMaterial({ color: 0x8b4513 });
@@ -78,13 +73,11 @@ var init = function() {
   const tree = new THREE.Group();
   tree.add(cylinder);
   tree.add(cone);
-  scene.add(tree);
 
   var sphere_g = new THREE.SphereGeometry( 0.15, 16, 16 );
   var material_s = new THREE.MeshBasicMaterial( {color: 0x00ffff} );
   var sphere = new THREE.Mesh(sphere_g, material_s );
   sphere.castShadow = true;
-  scene.add(sphere);
 
   var pillar_g = new THREE.BoxGeometry(0.1, 1, 0.1);
   var material_pi = new THREE.MeshPhongMaterial({ color: 0x252525 });
@@ -117,14 +110,12 @@ var init = function() {
   table.add(pillar3);
   table.add(pillar4);
   table.add(board);
-  //tree.castShadow = true;//グループ化のcastShadowは無理っぽい
-  scene.add(table);
 
   const all = new THREE.Group();
   all.add(box);
   all.add(box2);
   all.add(box3);
-  all.add(plane);
+  all.add(glid);
   all.add(tree);
   all.add(table);
   all.add(sphere);
