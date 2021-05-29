@@ -24,19 +24,19 @@ var init = function() {
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
   var box = new THREE.Mesh(geometry, material);
-  box.position.z = 5;
+  box.position.set(0,0,5);
   scene.add(box);
   //箱2 緑
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
   var box2 = new THREE.Mesh(geometry, material);
-  box2.position.y = 2;
+  box2.position.set(0,2,0);
   scene.add(box2);
   //箱3 赤
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshPhongMaterial({ color: 0xff0000 ,wireframe: true});
   var box3 = new THREE.Mesh(geometry, material);
-  box3.position.x = 3;
+  box3.position.set(3,0,0);
   scene.add(box3);
 
   var geometry = new THREE.PlaneGeometry(16,16,16,16);
@@ -48,22 +48,46 @@ var init = function() {
   var material = new THREE.MeshPhongMaterial({ color: 0x8b4513 });
   var cylinder = new THREE.Mesh(geometry, material);
   scene.add(cylinder);
-  cylinder.position.x = -3;
-  cylinder.position.y = 0.5;
-  cylinder.position.z = 2;
+  cylinder.position.set(-3,0.5,2);
 
   var geometry = new THREE.ConeGeometry(0.5,1.5,32);
   var material = new THREE.MeshPhongMaterial({ color: 0x008000 });
   var cone = new THREE.Mesh(geometry, material);
   scene.add(cone);
-  cone.position.x = -3;
-  cone.position.y = 1.5;
-  cone.position.z = 2;
+  cone.position.set(-3,1.5,2);
 
   var geometry = new THREE.SphereGeometry( 0.15, 16, 16 );
   var material = new THREE.MeshBasicMaterial( {color: 0x00ffff} );
   var sphere = new THREE.Mesh( geometry, material );
-  scene.add( sphere );
+  scene.add(sphere);
+
+  var geometry = new THREE.BoxGeometry(0.1, 1, 0.1);
+  var material = new THREE.MeshPhongMaterial({ color: 0x252525 });
+  var pillar1 = new THREE.Mesh(geometry, material);
+  pillar1.position.set(2,0.5,-3);
+
+  var pillar2 = new THREE.Mesh(geometry, material);
+  pillar2.position.set(2,0.5,-4);
+
+  var pillar3 = new THREE.Mesh(geometry, material);
+  pillar3.position.set(4,0.5,-3);
+
+  var pillar4 = new THREE.Mesh(geometry, material);
+  pillar4.position.set(4,0.5,-4);
+
+  var geometry = new THREE.BoxGeometry(2.2, 0.1, 1.2);
+  var material = new THREE.MeshPhongMaterial({ color: 0xa0522d });
+  var board = new THREE.Mesh(geometry, material);
+  board.position.set(3,1,-3.5);
+
+  //机のグループ
+  const table = new THREE.Group()
+  table.add(pillar1);
+  table.add(pillar2);
+  table.add(pillar3);
+  table.add(pillar4);
+  table.add(board);
+  scene.add(table);
 
   // 平行光源
   var directionalLight = new THREE.DirectionalLight(0xffffff);
@@ -84,10 +108,13 @@ var init = function() {
 
     // 箱を回転させる
     //box.rotation.x += 0.1;
-    box.rotation.z += 256;
+    box.rotation.z += 0.07;
     box2.rotation.y -= 0.2;
     box3.rotation.x -= 0.01;
-    plane.rotation.x = Math.PI / -2;
+    plane.rotation.set(Math.PI / -2,0,0);
+    //table.rotation.x += 1;
+    //table.rotation.y += 0.01;
+    //table.rotation.z += 0.01;
 
     renderer.render(scene, camera);
   };
