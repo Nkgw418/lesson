@@ -29,8 +29,11 @@ var init = function() {
   scene.add(plane);
 
   //軸
-  var axes = new THREE.AxisHelper(25);
-  axes.castShadow = true;
+  var axis = new THREE.AxisHelper(25);
+  axis.castShadow = true;
+
+  //グリッド
+  var grid = new THREE.GridHelper(16,16);
 
   // 箱を作成 青
   var box_g = new THREE.BoxGeometry(1, 1, 1);
@@ -50,12 +53,6 @@ var init = function() {
   var box3 = new THREE.Mesh(box_g, material_b3);
   box3.position.set(3,0,0);
   box3.castShadow = true;
-
-  //グリッド
-  var glid_g = new THREE.PlaneGeometry(16,16,16,16);
-  var material_gl = new THREE.MeshPhongMaterial({ color: 0x7fffd4 ,wireframe: true});
-  var glid = new THREE.Mesh(glid_g, material_gl);
-  glid.rotation.set(Math.PI / -2,0,0);
 
   var cyl_g = new THREE.CylinderGeometry(0.5,0.5,3,16);
   var material_cy = new THREE.MeshPhongMaterial({ color: 0x8b4513 });
@@ -115,11 +112,11 @@ var init = function() {
   all.add(box);
   all.add(box2);
   all.add(box3);
-  all.add(glid);
+  all.add(grid);
   all.add(tree);
   all.add(table);
   all.add(sphere);
-  all.add(axes);
+  all.add(axis);
   scene.add(all);
 
   // 照明を作成
@@ -147,7 +144,6 @@ var init = function() {
     requestAnimationFrame(update);
 
     // 箱を回転させる
-    //box.rotation.x += 0.1;
     box.rotation.z += 0.07;
     box2.rotation.y -= 0.2;
     box3.rotation.x -= 0.01;
