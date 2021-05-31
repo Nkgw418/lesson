@@ -26,7 +26,7 @@ var init = function() {
 
   // バンプマップ読み込み
   var bump = textureLoader.load("kumorigarasu-bump.jpg");
-  var bump2 = textureLoader.load("kumorigarasu-bump-a.jpg");//radius6000,samples16
+  var bump2 = textureLoader.load("kumorigarasu-bump-b.jpg");//radius6000,samples16
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
   mat2.bumpMap = bump2;
