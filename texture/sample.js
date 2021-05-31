@@ -18,7 +18,9 @@ var init = function() {
   var textureLoader = new THREE.TextureLoader();
   var texture = textureLoader.load("kumorigarasu.jpg");
   var mat = new THREE.MeshPhongMaterial();
+  var mat2 = new THREE.MeshPhongMaterial();
   mat.map = texture;
+  mat2.map = texture;
 
   // バンプマップ読み込み
   var bump = textureLoader.load("kumorigarasu-bump.jpg");
@@ -26,12 +28,14 @@ var init = function() {
   mat.bumpscale = 0.2;
 
   // 箱を作成
-  var geometry = new THREE.BoxGeometry(5, 1, 2);
+  var geometry = new THREE.BoxGeometry(1, 1, 1);
   //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
   //var box = new THREE.Mesh(geometry, material);
   var box = new THREE.Mesh(geometry, mat);
   box.position.z = -5;
   scene.add(box);
+  var box2 = new THREE.Mesh(geometry, mat2);
+  scene.add(box2);
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -51,6 +55,8 @@ var init = function() {
     // 箱を回転させる
     box.rotation.x += 0.01;
     box.rotation.y += 0.01;
+    box2.rotation.x += 0.01;
+    box2.rotation.y += 0.01;
 
     renderer.render(scene, camera);
   };
