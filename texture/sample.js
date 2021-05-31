@@ -26,8 +26,11 @@ var init = function() {
 
   // バンプマップ読み込み
   var bump = textureLoader.load("kumorigarasu-bump.jpg");
+  var bump2 = textureLoader.load("kumorigarasu-bump2.jpg");//radius6000,samples16
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
+  mat2.bumpMap = bump2;
+  mat2.bumpscale = 0.2;
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
