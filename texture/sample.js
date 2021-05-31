@@ -13,6 +13,8 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  camera.position.set(5,5,5);
+  camera.lookAt(scene.position);
 
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
@@ -32,9 +34,10 @@ var init = function() {
   //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
   //var box = new THREE.Mesh(geometry, material);
   var box = new THREE.Mesh(geometry, mat);
-  box.position.z = -5;
+  box.position.set(3,2,1);
   scene.add(box);
   var box2 = new THREE.Mesh(geometry, mat2);
+  box2.position.set(1,2,3);
   scene.add(box2);
 
   // 平行光源1
@@ -57,7 +60,7 @@ var init = function() {
     box.rotation.y += 0.01;
     box2.rotation.x += 0.01;
     box2.rotation.y += 0.01;
-
+    camera.lookAt(new THREE.Vector3(0,0,0));//原点を見る
     renderer.render(scene, camera);
   };
   update();
