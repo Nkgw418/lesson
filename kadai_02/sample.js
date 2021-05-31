@@ -1,7 +1,7 @@
 var init = function() {
 
   var width = 800,
-  height = 600;
+      height = 600;
 
   // レンダラーを作成
   var renderer = new THREE.WebGLRenderer();
