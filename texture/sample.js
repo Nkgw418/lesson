@@ -18,34 +18,35 @@ var init = function() {
 
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
-  var texture = textureLoader.load("kumorigarasu.jpg");
+  //var texture = textureLoader.load("kumorigarasu.jpg");
   var texture2 = textureLoader.load("wood.jpg");
-  //var mat = new THREE.MeshPhongMaterial();
-  //var mat2 = new THREE.MeshPhongMaterial();
-  var mat3 = new THREE.MeshPhongMaterial();
-  //mat.map = texture;
-  //mat2.map = texture;
+  var mat = new THREE.MeshPhongMaterial();
+  var mat2 = new THREE.MeshStandardMaterial();
+  var mat3 = new THREE.MeshToonMaterial();
+  mat.map = texture2;
+  mat2.map = texture2;
   mat3.map = texture2;
 
   // バンプマップ読み込み
   //var bump = textureLoader.load("kumorigarasu-bump.jpg");
   //var bump2 = textureLoader.load("kumorigarasu-bump-b.jpg");//radius6000,samples16
   var bump3 = textureLoader.load("wood-bump.jpg");
-  //mat.bumpMap = bump;
-  //mat.bumpscale = 0.2;
-  //mat2.bumpMap = bump2;
-  //mat2.bumpscale = 0.2;
+  mat.bumpMap = bump3;
+  mat.bumpscale = 0.2;
+  mat2.bumpMap = bump3;
+  mat2.bumpscale = 0.2;
   mat3.bumpMap = bump3;
   mat3.bumpscale = 0.2;
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshPhongMaterial({ color: 0x252525 });
-  //var box = new THREE.Mesh(geometry, material);
-  var box = new THREE.Mesh(geometry,material);//, mat);
+  var material2 = new THREE.MeshStandardMaterial({ color: 0x252525 });
+  var material3 = new THREE.MeshToonMaterial({ color: 0x252525 });
+  var box = new THREE.Mesh(geometry, mat);
   box.position.set(0,2,0);
 
-  var box2 = new THREE.Mesh(geometry,material);//, mat2);
+  var box2 = new THREE.Mesh(geometry, mat2);
   box2.position.set(3,2,0);
 
   var box3 = new THREE.Mesh(geometry, mat3);
