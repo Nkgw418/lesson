@@ -19,7 +19,7 @@ var init = function() {
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
   var texture = textureLoader.load("kumorigarasu.jpg");
-  var texture2 = textureLoader.load("watermark.jpg");
+  var texture2 = textureLoader.load("wood.jpg");
   //var mat = new THREE.MeshPhongMaterial();
   //var mat2 = new THREE.MeshPhongMaterial();
   var mat3 = new THREE.MeshPhongMaterial();
@@ -30,7 +30,7 @@ var init = function() {
   // バンプマップ読み込み
   //var bump = textureLoader.load("kumorigarasu-bump.jpg");
   //var bump2 = textureLoader.load("kumorigarasu-bump-b.jpg");//radius6000,samples16
-  var bump3 = textureLoader.load("watermark.jpg");
+  var bump3 = textureLoader.load("wood.jpg");
   //mat.bumpMap = bump;
   //mat.bumpscale = 0.2;
   //mat2.bumpMap = bump2;
