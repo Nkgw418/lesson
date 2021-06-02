@@ -13,7 +13,7 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  camera.position.set(0,5,10);
+  camera.position.set(0,5,7);
   //camera.lookAt(scene.position);
 
   // テクスチャー読み込み
