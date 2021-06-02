@@ -17,7 +17,7 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  camera.position.set(15,15,15);
+  //camera.position.set(3,100,3);
   //camera.lookAt(scene.position);
 
 
@@ -42,6 +42,42 @@ var init = function() {
   helper.add(grid);
   scene.add(helper);
 
+  var wall_g1 = new THREE.BoxGeometry(16, 8, 0.5);
+  var mat_wa = new THREE.MeshPhongMaterial({ color: 0x252525 });
+  var wall1 = new THREE.Mesh(wall_g1, mat_wa);
+  wall1.castShadow = true;
+  wall1.position.set(0,4,-8);
+
+  var wall_g2 = new THREE.BoxGeometry(0.5, 8, 16);
+  var wall2 = new THREE.Mesh(wall_g2, mat_wa);
+  wall2.castShadow = true;
+  wall2.position.set(8,4,0);
+
+  var wall3 = new THREE.Mesh(wall_g1, mat_wa);
+  wall3.castShadow = true;
+  wall3.position.set(0,4,8);
+
+  var wall4 = new THREE.Mesh(wall_g2, mat_wa);
+  wall4.castShadow = true;
+  wall4.position.set(-8,4,0);
+
+  var floor_g = new THREE.BoxGeometry(16, 0.01, 16);
+  var mat_fl = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+  var floor = new THREE.Mesh(floor_g, mat_fl);
+  floor.castShadow = true;
+
+  var ceiling = new THREE.Mesh(floor_g, mat_fl);
+  ceiling.castShadow = true;
+  ceiling.position.set(0,3,0);
+
+  const walls = new THREE.Group();
+  walls.add(wall1);
+  walls.add(wall2);
+  walls.add(wall3);
+  walls.add(wall4);
+  walls.add(floor);
+  walls.add(ceiling);
+  scene.add(walls);
 
   // 照明を作成
   var light = new THREE.SpotLight(0xFFFFFF, 2, 100, Math.PI / 4, 1);
@@ -71,10 +107,10 @@ var init = function() {
     // ラジアンに変換する
     var radian = rot * Math.PI / 180;
     // 角度に応じてカメラの位置を設定
-    camera.position.x = 20 * Math.sin(radian);
-    camera.position.z = 20 * Math.cos(radian);
-    camera.position.y = 5 ;
-    camera.lookAt(new THREE.Vector3(0,0,0));//原点を見る
+    camera.position.x = 8 * Math.sin(radian);
+    camera.position.z = 8 * Math.cos(radian);
+    camera.position.y = 3 ;
+    camera.lookAt(new THREE.Vector3(0,3,0));//原点を見る
     renderer.render(scene, camera);
   };
   update();
