@@ -36,19 +36,19 @@ var init = function() {
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight1.position.set(1, 1, 1);
+  directionalLight1.position.set(0, 5, 0);
   // シーンに追加
   scene.add(directionalLight1);
 
   // 平行光源2
   var directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight2.position.set(-10, 1, 1);
+  directionalLight2.position.set(5, 0, 5);
   // シーンに追加
   scene.add(directionalLight2);
 
   // 平行光源3
   var directionalLight3 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight3.position.set(1, -10, 1);
+  directionalLight3.position.set(-5, 0, -5);
   // シーンに追加
   scene.add(directionalLight3);
 
