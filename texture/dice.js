@@ -25,14 +25,27 @@ var init = function() {
     new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-3.jpg")}),
     new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-4.jpg")}),
   ];
+  var materials2 = [
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/1.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/2.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/3.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/4.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/5.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/6.jpg")}),
+  ];
 
   var material = new THREE.MeshFaceMaterial(materials);
+  var material2 = new THREE.MeshFaceMaterial(materials2);
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var box = new THREE.Mesh(geometry, material);
-  box.position.set(0,2,0);
+  box.position.set(1,2,0);
   scene.add(box);
+
+  var box2 = new THREE.Mesh(geometry, material2);
+  box2.position.set(-1,2,0);
+  scene.add(box2);
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
@@ -60,8 +73,10 @@ var init = function() {
     requestAnimationFrame(update);
 
     // 箱を回転させる
-    box.rotation.x += 0.05;
-    box.rotation.y += 0.05;
+    box.rotation.x += 0.01;
+    box.rotation.y += 0.01;
+    box2.rotation.x += 0.01;
+    box2.rotation.y += 0.01;
     camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
     renderer.render(scene, camera);
   };
