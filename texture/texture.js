@@ -18,24 +18,21 @@ var init = function() {
 
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
-  //var texture = textureLoader.load("kumorigarasu.jpg");
-  var texture2 = textureLoader.load("wood.jpg");
+  var texture = textureLoader.load("img/wood.jpg");
   var mat = new THREE.MeshPhongMaterial();
   var mat2 = new THREE.MeshStandardMaterial();
   var mat3 = new THREE.MeshToonMaterial();
-  mat.map = texture2;
-  mat2.map = texture2;
-  mat3.map = texture2;
+  mat.map = texture;
+  mat2.map = texture;
+  mat3.map = texture;
 
   // バンプマップ読み込み
-  //var bump = textureLoader.load("kumorigarasu-bump.jpg");
-  //var bump2 = textureLoader.load("kumorigarasu-bump-b.jpg");//radius6000,samples16
-  var bump3 = textureLoader.load("wood-bump.jpg");
-  mat.bumpMap = bump3;
+  var bump = textureLoader.load("img/wood-bump.jpg");
+  mat.bumpMap = bump;
   mat.bumpscale = 0.2;
-  mat2.bumpMap = bump3;
+  mat2.bumpMap = bump;
   mat2.bumpscale = 0.2;
-  mat3.bumpMap = bump3;
+  mat3.bumpMap = bump;
   mat3.bumpscale = 0.2;
 
   // 箱を作成
@@ -72,7 +69,7 @@ var init = function() {
   var directionalLight3 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight3.position.set(0, -2, 2);
   // シーンに追加
-  scene.add(directionalLight2);
+  scene.add(directionalLight3);
 
   //const light = new THREE.HemisphereLight(0x888888, 0x0000FF, 1.0);
   //scene.add(light);
