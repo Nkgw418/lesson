@@ -40,11 +40,11 @@ var init = function() {
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var box = new THREE.Mesh(geometry, material);
-  box.position.set(1,2,0);
+  box.position.set(2,2,0);
   scene.add(box);
 
   var box2 = new THREE.Mesh(geometry, material2);
-  box2.position.set(-1,2,0);
+  box2.position.set(-2,2,0);
   scene.add(box2);
 
   // 平行光源1
