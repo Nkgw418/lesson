@@ -66,8 +66,8 @@ var init = function() {
     requestAnimationFrame(update);
 
     // 箱を回転させる
-    box.rotation.x += 0.01;
-    box.rotation.y += 0.01;
+    //box.rotation.x += 0.01;
+    //box.rotation.y += 0.01;
     //camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
     renderer.render(scene, camera);
   };
