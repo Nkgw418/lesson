@@ -18,11 +18,11 @@ var init = function() {
   //camera.lookAt(scene.position);
 
   //軸
-  var axis = new THREE.AxisHelper(1250);
+  var axis = new THREE.AxisHelper(125);
   axis.castShadow = true;
 
   //グリッド
-  var grid = new THREE.GridHelper(1000,100);
+  var grid = new THREE.GridHelper(100,10);
 
   const helper = new THREE.Group();
   helper.add(axis);
@@ -37,7 +37,7 @@ var init = function() {
   // 鳥0を作成(原点に作成)
   const sprite = new THREE.Sprite(material);
   sprite.position.x = 0;
-  sprite.position.y = 0;
+  sprite.position.y = 100;
   sprite.position.z = 0;
   sprite.scale.set(100,100,100);
   scene.add(sprite);
