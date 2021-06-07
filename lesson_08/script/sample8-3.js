@@ -18,11 +18,11 @@ var init = function() {
   //camera.lookAt(scene.position);
 
   //軸
-  var axis = new THREE.AxisHelper(25);
+  var axis = new THREE.AxisHelper(1250);
   axis.castShadow = true;
 
   //グリッド
-  var grid = new THREE.GridHelper(16,16);
+  var grid = new THREE.GridHelper(1000,100);
 
   const helper = new THREE.Group();
   helper.add(axis);
