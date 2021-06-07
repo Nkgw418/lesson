@@ -17,18 +17,6 @@ var init = function() {
   camera.position.set(0,5,10);
   //camera.lookAt(0,50,0);
 
-  //軸
-  var axis = new THREE.AxisHelper(15);
-  axis.castShadow = true;
-
-  //グリッド
-  var grid = new THREE.GridHelper(10,10);
-
-  const helper = new THREE.Group();
-  helper.add(axis);
-  helper.add(grid);
-  scene.add(helper);
-
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
   var texture = textureLoader.load("img/wood.jpg");
@@ -44,7 +32,6 @@ var init = function() {
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   var material = new THREE.MeshStandardMaterial({ color: 0x252525 });
   var box = new THREE.Mesh(geometry, mat);
-  box.position.set(0,2,0);
   scene.add(box);
 
   // 平行光源1
@@ -79,7 +66,6 @@ var init = function() {
     //box.rotation.y += 0.01;
     //camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
     renderer.render(scene, camera);
-    camera.lookAt(new THREE.Vector3(0, 2, 0));
   };
   update();
 
