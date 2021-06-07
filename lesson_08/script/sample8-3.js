@@ -57,7 +57,7 @@ var init = function() {
   //scene.add(boxes);
 
   // 平行光源1
-  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
+  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 50);
   directionalLight1.position.set(0, 0, 10);
   // シーンに追加
   scene.add(directionalLight1);
