@@ -13,7 +13,7 @@ var init = function() {
   var scene = new THREE.Scene();
 
   // カメラを作成
-  var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  var camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
   camera.position.set(0,50,250);
   //camera.lookAt(scene.position);
 
@@ -48,7 +48,7 @@ var init = function() {
     sprite.position.x = i * 100;
     sprite.position.y = 50;
     sprite.position.z = 0;
-    sprite.scale.set(i*10,i*10,i*10);
+    sprite.scale.set(i*30,i*30,i*30);
     scene.add(sprite);
   }
   //const boxes = new THREE.Group();
