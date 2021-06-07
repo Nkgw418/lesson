@@ -27,7 +27,7 @@ var init = function() {
     new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-3.jpg")}),
     new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-4.jpg")}),
   ];
-  var material = new THREE.MeshStandardMaterial(materials);
+  var material = new THREE.MeshFaceMaterial(materials);
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
