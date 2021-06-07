@@ -1,5 +1,7 @@
 var init = function() {
 
+  window.addEventListener('load', init);
+
   var width = 800,
       height = 600;
 
