@@ -37,7 +37,7 @@ var init = function() {
   // 鳥0を作成(原点に作成)
   const sprite = new THREE.Sprite(material);
   sprite.position.x = 0;
-  sprite.position.y = 75;
+  sprite.position.y = 50;
   sprite.position.z = 0;
   sprite.scale.set(100,100,100);
   scene.add(sprite);
