@@ -41,7 +41,7 @@ var init = function() {
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight1.position.set(2, 2, 2);
+  directionalLight1.position.set(0, 0, 10);
   // シーンに追加
   scene.add(directionalLight1);
   // 平行光源2
