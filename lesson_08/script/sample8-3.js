@@ -20,13 +20,15 @@ var init = function() {
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
   var texture0 = textureLoader.load("img/bluebird_freeze.png");
-  var mat0 = new THREE.MeshLambertMaterial({transparent: true});
-  mat0.map = texture0;
+  const material = new THREE.SpriteMaterial({ map: texture,});
 
   // 鳥0を作成(原点に作成)
-  var geometry = new THREE.PlaneGeometry(75, 100);
-  var tori0 = new THREE.Mesh(geometry, mat0);
-  scene.add(tori0);
+  const sprite = new THREE.Sprite(material);
+  sprite.position.x = 0;
+  sprite.position.y = 0;
+  sprite.position.z = 0;
+  sprite.scale.set(100,100,100);
+  scene.add(sprite);
 
   //const boxes = new THREE.Group();
   //boxes.add(box);
