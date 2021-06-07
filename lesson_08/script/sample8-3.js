@@ -48,7 +48,7 @@ var init = function() {
     sprite.position.x = i * 100;
     sprite.position.y = 50;
     sprite.position.z = 0;
-    sprite.scale.set(i*30,i*30,i*30);
+    sprite.scale.set((i+1)*50,(i+1)*50,(i+1)*50);
     scene.add(sprite);
   }
   //const boxes = new THREE.Group();
