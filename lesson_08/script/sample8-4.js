@@ -18,11 +18,11 @@ var init = function() {
   //camera.lookAt(0,50,0);
 
   //軸
-  var axis = new THREE.AxisHelper(125);
+  var axis = new THREE.AxisHelper(15);
   axis.castShadow = true;
 
   //グリッド
-  var grid = new THREE.GridHelper(100,10);
+  var grid = new THREE.GridHelper(10,10);
 
   const helper = new THREE.Group();
   helper.add(axis);
@@ -48,7 +48,7 @@ var init = function() {
   scene.add(box);
 
   // 平行光源1
-  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 50);
+  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight1.position.set(0, 0, 10);
   // シーンに追加
   scene.add(directionalLight1);
@@ -79,7 +79,7 @@ var init = function() {
     //box.rotation.y += 0.01;
     //camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
     renderer.render(scene, camera);
-    camera.lookAt(new THREE.Vector3(0, 5, 0));
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
   };
   update();
 
