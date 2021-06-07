@@ -35,13 +35,21 @@ var init = function() {
   const material = new THREE.SpriteMaterial({ map: texture0,});
 
   // 鳥0を作成(原点に作成)
-  const sprite = new THREE.Sprite(material);
-  sprite.position.x = 0;
-  sprite.position.y = 50;
-  sprite.position.z = 0;
-  sprite.scale.set(100,100,100);
-  scene.add(sprite);
+  //const sprite = new THREE.Sprite(material);
+  //sprite.position.x = 0;
+  //sprite.position.y = 50;
+  //sprite.position.z = 0;
+  //sprite.scale.set(100,100,100);
+  //scene.add(sprite);
 
+  for(var i = 0;i < 10; i++){
+    const sprite = new THREE.Sprite(material);
+    sprite.position.x = i * 100;
+    sprite.position.y = 50;
+    sprite.position.z = 0;
+    sprite.scale.set(100,100,100);
+    scene.add(sprite);
+  }
   //const boxes = new THREE.Group();
   //boxes.add(box);
   //boxes.add(box2);
