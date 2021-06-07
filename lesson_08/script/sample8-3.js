@@ -20,7 +20,7 @@ var init = function() {
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
   var texture0 = textureLoader.load("img/bluebird_freeze.png");
-  const material = new THREE.SpriteMaterial({ map: texture,});
+  const material = new THREE.SpriteMaterial({ map: texture0,});
 
   // 鳥0を作成(原点に作成)
   const sprite = new THREE.Sprite(material);
