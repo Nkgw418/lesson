@@ -15,7 +15,7 @@ var init = function() {
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
   camera.position.set(0,50,250);
-  camera.lookAt(0,50,0);
+  //camera.lookAt(0,50,0);
 
   //軸
   var axis = new THREE.AxisHelper(125);
@@ -94,6 +94,7 @@ var init = function() {
     //box.rotation.y += 0.01;
     //camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
     renderer.render(scene, camera);
+    camera.lookAt(new THREE.Vector3(0, 50, 0));
   };
   update();
 
