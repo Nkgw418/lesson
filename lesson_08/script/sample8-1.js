@@ -15,7 +15,7 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  camera.position.set(5,5,5);
+  camera.position.set(3,3,3);
   //camera.lookAt(scene.position);
 
   // テクスチャー読み込み
@@ -42,7 +42,7 @@ var init = function() {
   //scene.add(boxes);
 
   // 平行光源1
-  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
+  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 5);
   directionalLight1.position.set(5, 5, 5);
   // シーンに追加
   scene.add(directionalLight1);
