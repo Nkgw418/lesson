@@ -14,7 +14,7 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  camera.position.set(0,0,250);
+  camera.position.set(0,50,250);
   //camera.lookAt(scene.position);
 
   //軸
@@ -37,7 +37,7 @@ var init = function() {
   // 鳥0を作成(原点に作成)
   const sprite = new THREE.Sprite(material);
   sprite.position.x = 0;
-  sprite.position.y = 100;
+  sprite.position.y = 75;
   sprite.position.z = 0;
   sprite.scale.set(100,100,100);
   scene.add(sprite);
