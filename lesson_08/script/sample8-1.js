@@ -39,27 +39,28 @@ var init = function() {
   //boxes.add(box3);
   //scene.add(boxes);
 
-  // カメラコントローラーを作成
-  const controls = new THREE.OrbitControls(camera,document.body);
-
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight1.position.set(2, 2, 2);
   // シーンに追加
   scene.add(directionalLight1);
   // 平行光源2
-  var directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight2.position.set(-2, 2, 2);
+  //var directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
+  //directionalLight2.position.set(-2, 2, 2);
   // シーンに追加
-  scene.add(directionalLight2);
+  //scene.add(directionalLight2);
   // 平行光源3
-  var directionalLight3 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight3.position.set(0, -2, 2);
+  //var directionalLight3 = new THREE.DirectionalLight(0xffffff, 1);
+  //directionalLight3.position.set(0, -2, 2);
   // シーンに追加
-  scene.add(directionalLight3);
+  //scene.add(directionalLight3);
 
   //const light = new THREE.HemisphereLight(0x888888, 0x0000FF, 1.0);
   //scene.add(light);
+
+  // カメラコントローラーを作成
+  const controls = new THREE.OrbitControls(camera,document.body);
+  const controls2 = new THREE.OrbitControls(directionalLight1,document.body);
 
   // 初回実行
   var update = function() {
