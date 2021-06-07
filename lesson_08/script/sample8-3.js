@@ -14,7 +14,7 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
-  camera.position.set(500,100,500);
+  camera.position.set(500,1000,500);
   //camera.lookAt(0,50,0);
 
   //軸
