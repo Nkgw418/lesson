@@ -42,7 +42,7 @@ var init = function() {
   //sprite.scale.set(100,100,100);
   //scene.add(sprite);
 
-  for(var i = 0;i < 10; i++){
+  for(var i = 0;i < 100; i++){
     const sprite = new THREE.Sprite(material);
     sprite.position.x = i * 100;
     sprite.position.y = 50;
