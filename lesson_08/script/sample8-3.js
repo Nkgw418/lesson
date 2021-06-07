@@ -44,10 +44,11 @@ var init = function() {
 
   for(var i = -50;i < 50; i++){
     const sprite = new THREE.Sprite(material);
+    const a = Math.abs(i);
     sprite.position.x = i * 100;
     sprite.position.y = 50;
     sprite.position.z = 0;
-    sprite.scale.set(100,100,100);
+    sprite.scale.set(i*10,i*10,i*10);
     scene.add(sprite);
   }
   //const boxes = new THREE.Group();
