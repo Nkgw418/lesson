@@ -68,11 +68,7 @@ var init = function() {
     // 箱を回転させる
     box.rotation.x += 0.01;
     box.rotation.y += 0.01;
-    box2.rotation.x += 0.01;
-    box2.rotation.y += 0.01;
-    box3.rotation.x += 0.01;
-    box3.rotation.y += 0.01;
-    camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
+    //camera.lookAt(new THREE.Vector3(0,2,0));//原点を見る
     renderer.render(scene, camera);
   };
   update();
