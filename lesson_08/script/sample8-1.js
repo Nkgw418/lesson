@@ -59,8 +59,8 @@ var init = function() {
   //scene.add(light);
 
   // カメラコントローラーを作成
-  const controls = new THREE.OrbitControls(camera,document.body);
-  const controls2 = new THREE.OrbitControls(directionalLight1,document.body);
+  const controls_c = new THREE.OrbitControls(camera,document.body);
+  const controls_l = new THREE.OrbitControls(directionalLight1,document.body);
 
   // 初回実行
   var update = function() {
