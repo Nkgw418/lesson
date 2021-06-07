@@ -27,7 +27,7 @@ var init = function() {
     new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-3.jpg")}),
     new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-4.jpg")}),
   ];
-  var material = new THREE.MeshFaceMaterial(materials);
+  var material = new THREE.MeshStandardMaterial(materials);
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -42,7 +42,7 @@ var init = function() {
   //scene.add(boxes);
 
   // 平行光源1
-  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 5);
+  var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight1.position.set(5, 5, 5);
   // シーンに追加
   scene.add(directionalLight1);
