@@ -19,12 +19,12 @@ var init = function() {
 
   // テクスチャー読み込み
   var materials = [
-    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-2.jpg")}),
-    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-5.jpg")}),
-    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-1.jpg")}),
-    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-6.jpg")}),
-    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-3.jpg")}),
-    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice-4.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-2.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-5.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-1.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-6.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-3.jpg")}),
+    new THREE.MeshStandardMaterial({map:THREE.ImageUtils.loadTexture("img/dice/dice-4.jpg")}),
   ];
   var material = new THREE.MeshFaceMaterial(materials);
 
