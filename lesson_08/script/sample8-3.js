@@ -41,9 +41,9 @@ var init = function() {
   //sprite.position.z = 0;
   //sprite.scale.set(100,100,100);
   //scene.add(sprite);
-
+  const sprite = new THREE.Sprite(material);
   for(var i = -50;i < 50; i++){
-    const sprite = new THREE.Sprite(material);
+    //const sprite = new THREE.Sprite(material);
     const a = Math.abs(i);
     sprite.position.x = i * 100;
     sprite.position.y = 50;
