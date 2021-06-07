@@ -14,8 +14,20 @@ var init = function() {
 
   // カメラを作成
   var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  camera.position.set(0,0,1000);
+  camera.position.set(0,0,250);
   //camera.lookAt(scene.position);
+
+  //軸
+  var axis = new THREE.AxisHelper(25);
+  axis.castShadow = true;
+
+  //グリッド
+  var grid = new THREE.GridHelper(16,16);
+
+  const helper = new THREE.Group();
+  helper.add(axis);
+  helper.add(grid);
+  scene.add(helper);
 
   // テクスチャー読み込み
   var textureLoader = new THREE.TextureLoader();
