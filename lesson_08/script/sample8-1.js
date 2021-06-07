@@ -7,6 +7,7 @@ var init = function() {
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize(width, height);
   document.body.appendChild(renderer.domElement);
+  renderer.setClearColor(0xeeeeff);
 
   // シーンを作成
   var scene = new THREE.Scene();
@@ -58,7 +59,7 @@ var init = function() {
   //const light = new THREE.HemisphereLight(0x888888, 0x0000FF, 1.0);
   //scene.add(light);
 
-  // カメラコントローラーを作成
+  // コントローラーを作成
   const controls_c = new THREE.OrbitControls(camera,document.body);
   const controls_l = new THREE.OrbitControls(directionalLight1,document.body);
 
