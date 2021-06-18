@@ -75,29 +75,51 @@ var init = function() {
 
   const g_dLeg = new THREE.BoxGeometry(1, 7, 1);
   const g_dLeg2 = new THREE.BoxGeometry(1, 14, 1);
+  const g_dLeg3 = new THREE.BoxGeometry(4, 1, 1);
 
   for(let i=0; i<2; i++){//机の脚
     const dLeg1 = new THREE.Mesh(g_dLeg, m_dLeg);
-    dLeg1.position.set(-0.5,3.5,-7.5-(i*5));
+    dLeg1.position.set(-0.5, 3.5, -7.5-(i*5));
 
     const dLeg2 = new THREE.Mesh(g_dLeg2, m_dLeg);
-    dLeg2.position.set(11.5,3.5,-7.5-(i*5));
+    dLeg2.position.set(11.5, 7, -7.5-(i*5));
 
     const dLeg3 = new THREE.Mesh(g_dLeg2, m_dLeg);
-    dLeg3.position.set(14.5,3.5,-7.5-(i*5));
+    dLeg3.position.set(14.5, 7, -7.5-(i*5));
+
+    const dLeg4 = new THREE.Mesh(g_dLeg3, m_dLeg);
+    dLeg4.position.set(13, 14.5, -7.5-(i*5));
+
+    const dLeg5 = new THREE.Mesh(g_dLeg3, m_dLeg);
+    dLeg5.position.set(13, 7.5, -7.5-(i*5));
 
     desk.add(dLeg1);
     desk.add(dLeg2);
     desk.add(dLeg3);
+    desk.add(dLeg4);
+    desk.add(dLeg5);
   }
 
-  const g_dBoard1 = new THREE.BoxGeometry(16, 1, 6);
-  const dBoard1 = new THREE.Mesh(g_dBoard1, m_dBoard);
-  dBoard1.position.set(7, 7.5, -10);
+  const g_dBoard = new THREE.BoxGeometry(12, 1, 6);
+  const g_dBoard2 = new THREE.BoxGeometry(4, 1, 4);
+  const dBoard1 = new THREE.Mesh(g_dBoard, m_dBoard);
+  dBoard1.position.set(5, 7.5, -10);
+
+  const dBoard2 = new THREE.Mesh(g_dBoard2, m_dBoard);
+  dBoard2.position.set(13, 11.5, -10);
+
+  const dBoard3 = new THREE.Mesh(g_dBoard2, m_dBoard);
+  dBoard3.position.set(13, 7.5, -10);
+
+  const dBoard4 = new THREE.Mesh(g_dBoard2, m_dBoard);
+  dBoard4.position.set(13, 1.5, -10);
 
 
 
   desk.add(dBoard1);
+  desk.add(dBoard2);
+  desk.add(dBoard3);
+  desk.add(dBoard4);
   scene.add(desk);//scene set
 
   // 平行光源1
