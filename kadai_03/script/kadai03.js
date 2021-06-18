@@ -89,7 +89,9 @@ var init = function() {
   const dLeg6 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg6.position.set(14.5,3.5,-12.5);
 
-
+  const g_dBoard1 = new THREE.BoxGeometry(16, 1, 6);
+  const dBoard1 = new THREE.Mesh(g_dBoard1, m_dBoard);
+  dBoard1.position.set(7, 7.5, -10);
 
 
 
@@ -100,6 +102,7 @@ var init = function() {
   desk.add(dLeg4);
   desk.add(dLeg5);
   desk.add(dLeg6);
+  desk.add(dBoard1);
   scene.add(desk);
 
   // 平行光源1
