@@ -35,7 +35,7 @@ var init = function() {
   const mat_man = new THREE.SpriteMaterial({ map: texture_man});
 
   const sp_man = new THREE.Sprite(mat_man);
-  sprite.scale.set(5,5,25);
+  sp_man.scale.set(5,5,25);
   scene.add(sp_man);
 
   // 平行光源1
