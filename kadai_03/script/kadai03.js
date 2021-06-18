@@ -22,7 +22,7 @@ var init = function() {
   axis.castShadow = true;
 
   //グリッド
-  var grid = new THREE.GridHelper(100,10);
+  var grid = new THREE.GridHelper(50,50);
 
   const helper = new THREE.Group();
   helper.add(axis);
@@ -35,8 +35,10 @@ var init = function() {
   const mat_man = new THREE.SpriteMaterial({ map: texture_man});
 
   const sp_man = new THREE.Sprite(mat_man);
-  sp_man.scale.set(5,5,25);
+  sp_man.scale.set(50,50,50);
   scene.add(sp_man);
+
+
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 50);
