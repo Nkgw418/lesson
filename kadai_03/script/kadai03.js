@@ -30,43 +30,13 @@ var init = function() {
   scene.add(helper);
 
   // テクスチャー読み込み
-  var textureLoader = new THREE.TextureLoader();
-  var texture0 = textureLoader.load("img/bluebird_freeze.png");
-  const material = new THREE.SpriteMaterial({ map: texture0,});
+  var tl_man = new THREE.TextureLoader();
+  var texture_man = tl_man.load("img/human.png");
+  const mat_man = new THREE.SpriteMaterial({ map: texture_man});
 
-  for(let i = -50;i < 50; i++){
-    const sprite = new THREE.Sprite(material);
-    const a = Math.abs(i);
-    sprite.position.x = i * 100;
-    sprite.position.y = 50;
-    sprite.position.z = 0;
-    sprite.scale.set(i*50,i*50,i*50);
-    scene.add(sprite);
-  }
-  for(let i = -50;i < 50; i++){
-    const sprite = new THREE.Sprite(material);
-    const a = Math.abs(i);
-    sprite.position.x = 0;
-    sprite.position.y = 50;
-    sprite.position.z = i * 100;
-    sprite.scale.set(i*50,i*50,i*50);
-    scene.add(sprite);
-  }
-  for(let i = -50;i < 50; i++){
-    const sprite = new THREE.Sprite(material);
-    const a = Math.abs(i);
-    sprite.position.x = 0;
-    sprite.position.y = 50 + i * 100;
-    sprite.position.z = 0;
-    sprite.scale.set(i*50,i*50,i*50);
-    scene.add(sprite);
-  }
-  const sprite = new THREE.Sprite(material);
-  sprite.position.x = 0;
-  sprite.position.y = 50;
-  sprite.position.z = 0;
-  sprite.scale.set(25,25,525);
-  scene.add(sprite);
+  const sp_man = new THREE.Sprite(mat_man);
+  //sprite.scale.set(25,25,525);
+  scene.add(sp_man);
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 50);
