@@ -75,7 +75,7 @@ var init = function() {
   const desk = new THREE.Group();
 
   const g_dLeg = new THREE.BoxGeometry(1, 7, 1);
-  const g_dLeg2 = new THREE.BoxGeometry(1, 14, 1);
+  const g_dLeg2 = new THREE.BoxGeometry(1, 15, 1);
   const g_dLeg3 = new THREE.BoxGeometry(4, 1, 1);
   const g_dBoard = new THREE.BoxGeometry(12, 1, 6);
   const g_dBoard2 = new THREE.BoxGeometry(4, 1, 4);
@@ -85,13 +85,13 @@ var init = function() {
     dLeg1.position.set(-0.5, 3.5, -7.5-(i*5));
 
     const dLeg2 = new THREE.Mesh(g_dLeg2, m_dLeg);
-    dLeg2.position.set(11.5, 7, -7.5-(i*5));
+    dLeg2.position.set(11.5, 7.5, -7.5-(i*5));
 
     const dLeg3 = new THREE.Mesh(g_dLeg2, m_dLeg);
-    dLeg3.position.set(14.5, 7, -7.5-(i*5));
+    dLeg3.position.set(14.5, 7.5, -7.5-(i*5));
 
     const dLeg4 = new THREE.Mesh(g_dLeg3, m_dLeg);
-    dLeg4.position.set(13, 14.5, -7.5-(i*5));
+    dLeg4.position.set(13, 15.5, -7.5-(i*5));
 
     const dLeg5 = new THREE.Mesh(g_dLeg3, m_dLeg);
     dLeg5.position.set(13, 7.5, -7.5-(i*5));
@@ -129,13 +129,13 @@ var init = function() {
   const g_mo3 = new THREE.BoxGeometry(3, 1, 1);
 
   const mo1 = new THREE.Mesh(g_mo1, m_mo);
-  mo1.position.set(6.5, 11.5, -11.5);
+  mo1.position.set(6.5, 12.5, -11.5);
 
   const mo2 = new THREE.Mesh(g_mo2, m_mo);
-  mo2.position.set(6.5, 8.5, -11.5);
+  mo2.position.set(6.5, 9.5, -11.5);
 
   const mo3 = new THREE.Mesh(g_mo3, m_mo);
-  mo3.position.set(6.5, 7.5, -11.5);
+  mo3.position.set(6.5, 8.5, -11.5);
 
   monitor.add(mo1);
   monitor.add(mo2);
