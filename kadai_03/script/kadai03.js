@@ -51,19 +51,19 @@ var init = function() {
 
   const g_cLeg1 = new THREE.BoxGeometry(3, 1, 3);
   const cLeg1 = new THREE.Mesh(g_cLeg1, m_Chair);
-  cLeg1.position.set(6.5,0.5,-2.5);
+  cLeg1.position.set(6.5, 0.5, -2.5);
 
-  const g_cLeg2 = new THREE.BoxGeometry(1, 2, 1);
+  const g_cLeg2 = new THREE.BoxGeometry(1, 3, 1);
   const cLeg2 = new THREE.Mesh(g_cLeg2, m_Chair);
-  cLeg2.position.set(6.5,2,-2.5);
+  cLeg2.position.set(6.5, 2.5, -2.5);
 
   const g_cBoard = new THREE.BoxGeometry(5, 1, 5);
   const cBoard = new THREE.Mesh(g_cBoard, m_Chair);
-  cBoard.position.set(6.5,3.5,-2.5);
+  cBoard.position.set(6.5, 4.5, -2.5);
 
   const g_cBack = new THREE.BoxGeometry(5, 7, 1);
   const cBack = new THREE.Mesh(g_cBack, m_Chair);
-  cBack.position.set(6.5,7.5,-0.5);
+  cBack.position.set(6.5, 8.5, -0.5);
 
   chair.add(cLeg1);
   chair.add(cLeg2);
