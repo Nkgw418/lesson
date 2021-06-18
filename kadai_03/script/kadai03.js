@@ -35,7 +35,7 @@ var init = function() {
   const mat_man = new THREE.SpriteMaterial({ map: texture_man});
 
   const sp_man = new THREE.Sprite(mat_man);
-  sp_man.scale.set(2,10,1);
+  sp_man.scale.set(3,10,1);
   sp_man.position.set(0,5,0);
   scene.add(sp_man);
 
@@ -70,24 +70,23 @@ var init = function() {
   scene.add(chair);//scene set
 
   //机
+  const desk = new THREE.Group();
+
   const g_dLeg = new THREE.BoxGeometry(1, 7, 1);
-  const dLeg1 = new THREE.Mesh(g_dLeg, m_dLeg);
-  dLeg1.position.set(-0.5,3.5,-7.5);
+  for(let i=0; i<2; i++){
+    const dLeg1 = new THREE.Mesh(g_dLeg, m_dLeg);
+    dLeg1.position.set(-0.5,3.5,-7.5-(i*5));
 
-  const dLeg2 = new THREE.Mesh(g_dLeg, m_dLeg);
-  dLeg2.position.set(11.5,3.5,-7.5);
+    const dLeg2 = new THREE.Mesh(g_dLeg, m_dLeg);
+    dLeg2.position.set(11.5,3.5,-7.5-(i*5));
 
-  const dLeg3 = new THREE.Mesh(g_dLeg, m_dLeg);
-  dLeg3.position.set(14.5,3.5,-7.5);
+    const dLeg3 = new THREE.Mesh(g_dLeg, m_dLeg);
+    dLeg3.position.set(14.5,3.5,-7.5-(i*5));
 
-  const dLeg4 = new THREE.Mesh(g_dLeg, m_dLeg);
-  dLeg4.position.set(-0.5,3.5,-12.5);
-
-  const dLeg5 = new THREE.Mesh(g_dLeg, m_dLeg);
-  dLeg5.position.set(11.5,3.5,-12.5);
-
-  const dLeg6 = new THREE.Mesh(g_dLeg, m_dLeg);
-  dLeg6.position.set(14.5,3.5,-12.5);
+    desk.add(dLeg1);
+    desk.add(dLeg2);
+    desk.add(dLeg3);
+  }
 
   const g_dBoard1 = new THREE.BoxGeometry(16, 1, 6);
   const dBoard1 = new THREE.Mesh(g_dBoard1, m_dBoard);
@@ -95,13 +94,13 @@ var init = function() {
 
 
 
-  const desk = new THREE.Group();
-  desk.add(dLeg1);
-  desk.add(dLeg2);
-  desk.add(dLeg3);
-  desk.add(dLeg4);
-  desk.add(dLeg5);
-  desk.add(dLeg6);
+  //const desk = new THREE.Group();
+  //desk.add(dLeg1);
+  //desk.add(dLeg2);
+  //desk.add(dLeg3);
+  //desk.add(dLeg4);
+  //desk.add(dLeg5);
+  //desk.add(dLeg6);
   desk.add(dBoard1);
   scene.add(desk);
 
