@@ -35,21 +35,27 @@ var init = function() {
   const mat_man = new THREE.SpriteMaterial({ map: texture_man});
 
   const sp_man = new THREE.Sprite(mat_man);
-  //sp_man.scale.set(2,2,2);
-  sp_man.position.set(0,1,0);
+  sp_man.scale.set(1,10,1);
+  sp_man.position.set(0,5,0);
   scene.add(sp_man);
 
   //椅子
   var g_cLeg1 = new THREE.BoxGeometry(3, 1, 3);
-  var mat_cLeg = new THREE.MeshPhongMaterial({ color: 0x505050 });
-  var cLeg1 = new THREE.Mesh(g_cLeg1, mat_cLeg);
+  var g_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
+  var cLeg1 = new THREE.Mesh(g_cLeg1, g_Chair);
   cLeg1.position.set(6.5,0.5,-2.5);
 
   var g_cLeg2 = new THREE.BoxGeometry(1, 2, 1);
-  var cLeg2 = new THREE.Mesh(g_cLeg2, mat_cLeg);
+  var cLeg2 = new THREE.Mesh(g_cLeg2, g_Chair);
   cLeg2.position.set(6.5,2,-2.5);
 
+  var g_cBoard = new THREE.BoxGeometry(5, 1, 5);
+  var cBoard = new THREE.Mesh(g_cBoard, g_Chair);
+  cBoard.position.set(6.5,3.5,-2.5);
 
+  var g_cBack = new THREE.BoxGeometry(5, 7, 1);
+  var cBack = new THREE.Mesh(g_cBack, g_Chair);
+  cBack.position.set(6.5,7.5,-0.5);
 
 
 
@@ -59,6 +65,8 @@ var init = function() {
   const chair = new THREE.Group();
   chair.add(cLeg1);
   chair.add(cLeg2);
+  chair.add(cBoard);
+  chair.add(cBack);
   scene.add(chair);
 
   // 平行光源1
