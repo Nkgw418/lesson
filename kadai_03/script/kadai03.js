@@ -35,10 +35,15 @@ var init = function() {
   const mat_man = new THREE.SpriteMaterial({ map: texture_man});
 
   const sp_man = new THREE.Sprite(mat_man);
-  sp_man.scale.set(50,50,50);
+  sp_man.scale.set(2,2,2);
   scene.add(sp_man);
 
-
+  //椅子
+  var g_cLeg = new THREE.BoxGeometry(3, 1, 3);
+  var mat_cLeg = new THREE.MeshPhongMaterial({ color: 0x808080 });
+  var cLeg = new THREE.Mesh(g_cLeg, mat_cLeg);
+  cLeg.position.set(6.5,0.5,-2.5);
+  scene.add(cLeg);
 
   // 平行光源1
   var directionalLight1 = new THREE.DirectionalLight(0xffffff, 50);
