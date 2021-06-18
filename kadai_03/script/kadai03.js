@@ -46,6 +46,8 @@ var init = function() {
 
 
   //椅子
+  const chair = new THREE.Group();
+
   const g_cLeg1 = new THREE.BoxGeometry(3, 1, 3);
   const cLeg1 = new THREE.Mesh(g_cLeg1, m_Chair);
   cLeg1.position.set(6.5,0.5,-2.5);
@@ -62,7 +64,6 @@ var init = function() {
   const cBack = new THREE.Mesh(g_cBack, m_Chair);
   cBack.position.set(6.5,7.5,-0.5);
 
-  const chair = new THREE.Group();
   chair.add(cLeg1);
   chair.add(cLeg2);
   chair.add(cBoard);
@@ -73,14 +74,16 @@ var init = function() {
   const desk = new THREE.Group();
 
   const g_dLeg = new THREE.BoxGeometry(1, 7, 1);
-  for(let i=0; i<2; i++){
+  const g_dLeg2 = new THREE.BoxGeometry(1, 14, 1);
+
+  for(let i=0; i<2; i++){//机の脚
     const dLeg1 = new THREE.Mesh(g_dLeg, m_dLeg);
     dLeg1.position.set(-0.5,3.5,-7.5-(i*5));
 
-    const dLeg2 = new THREE.Mesh(g_dLeg, m_dLeg);
+    const dLeg2 = new THREE.Mesh(g_dLeg2, m_dLeg);
     dLeg2.position.set(11.5,3.5,-7.5-(i*5));
 
-    const dLeg3 = new THREE.Mesh(g_dLeg, m_dLeg);
+    const dLeg3 = new THREE.Mesh(g_dLeg2, m_dLeg);
     dLeg3.position.set(14.5,3.5,-7.5-(i*5));
 
     desk.add(dLeg1);
@@ -94,15 +97,8 @@ var init = function() {
 
 
 
-  //const desk = new THREE.Group();
-  //desk.add(dLeg1);
-  //desk.add(dLeg2);
-  //desk.add(dLeg3);
-  //desk.add(dLeg4);
-  //desk.add(dLeg5);
-  //desk.add(dLeg6);
   desk.add(dBoard1);
-  scene.add(desk);
+  scene.add(desk);//scene set
 
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
