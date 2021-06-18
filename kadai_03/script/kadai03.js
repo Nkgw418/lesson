@@ -71,22 +71,22 @@ var init = function() {
 
   //机
   const g_dLeg = new THREE.BoxGeometry(1, 7, 1);
-  const dLeg1 = = new THREE.Mesh(g_dLeg, m_dLeg);
+  const dLeg1 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg1.position.set(-0.5,3.5,-7.5);
 
-  const dLeg2 = = new THREE.Mesh(g_dLeg, m_dLeg);
+  const dLeg2 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg2.position.set(11.5,3.5,-7.5);
 
-  const dLeg3 = = new THREE.Mesh(g_dLeg, m_dLeg);
+  const dLeg3 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg3.position.set(14.5,3.5,-7.5);
 
-  const dLeg4 = = new THREE.Mesh(g_dLeg, m_dLeg);
+  const dLeg4 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg4.position.set(-0.5,3.5,-12.5);
 
-  const dLeg5 = = new THREE.Mesh(g_dLeg, m_dLeg);
+  const dLeg5 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg5.position.set(11.5,3.5,-12.5);
 
-  const dLeg6 = = new THREE.Mesh(g_dLeg, m_dLeg);
+  const dLeg6 = new THREE.Mesh(g_dLeg, m_dLeg);
   dLeg6.position.set(14.5,3.5,-12.5);
 
 
