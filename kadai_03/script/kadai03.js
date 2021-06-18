@@ -126,7 +126,7 @@ var init = function() {
 
   const g_mo1 = new THREE.BoxGeometry(9, 5, 1);
   const g_mo2 = new THREE.BoxGeometry(1, 1, 1);
-  const g_mo3 = new THREE.BoxGeometry(3, 1, 1);
+  const g_mo3 = new THREE.BoxGeometry(3, 1, 3);
 
   const mo1 = new THREE.Mesh(g_mo1, m_mo);
   mo1.position.set(6.5, 12.5, -11.5);
