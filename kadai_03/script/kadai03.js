@@ -50,25 +50,33 @@ var init = function() {
 
   //テクスチャ
   const textureLoader = new THREE.TextureLoader();
-  const texture_chair = textureLoader.load("img/chair.jpg");
+  const texture_chair = textureLoader.load("img/chair/chair.jpg");
   const m_Chair = new THREE.MeshPhongMaterial();
   m_Chair.map = texture_chair;
 
+  const texture_cLeg = textureLoader.load("img/chair/chairLeg.jpg");
+  const m_cLeg = new THREE.MeshPhongMaterial();
+  m_cLeg.map = texture_cLeg;
+
   // バンプマップ読み込み
-  var bump_Chair = textureLoader.load("img/chair-bump.jpg");
+  var bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
   m_Chair.bumpscale = 0.2;
+
+  var bump_cLeg = textureLoader.load("img/chair/chairLeg-bump.jpg");
+  m_cLeg.bumpMap = bump_cLeg;
+  m_cLeg.bumpscale = 0.2;
 
 
   //椅子
   const chair = new THREE.Group();
 
   const g_cLeg1 = new THREE.BoxGeometry(3, 1, 3);
-  const cLeg1 = new THREE.Mesh(g_cLeg1, m_Chair);
+  const cLeg1 = new THREE.Mesh(g_cLeg1, m_cLeg);
   cLeg1.position.set(6.5, 0.5, -2.5);
 
   const g_cLeg2 = new THREE.BoxGeometry(1, 3, 1);
-  const cLeg2 = new THREE.Mesh(g_cLeg2, m_Chair);
+  const cLeg2 = new THREE.Mesh(g_cLeg2, m_cLeg);
   cLeg2.position.set(6.5, 2.5, -2.5);
 
   const g_cBoard = new THREE.BoxGeometry(5, 1, 5);
