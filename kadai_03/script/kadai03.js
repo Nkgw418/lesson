@@ -173,8 +173,6 @@ var init = function() {
   const bCloth = new THREE.Mesh(g_bCloth, m_bCloth);
   bCloth.position.set(-12, 4.5, 4);
 
-
-
   bed.add(bFlame1);
   bed.add(bFlame2);
   bed.add(bFlame3);
@@ -183,8 +181,11 @@ var init = function() {
   bed.add(bCloth);
   scene.add(bed);
 
-
-
+  //PC
+  const g_pc = new THREE.BoxGeometry(2, 4, 5);
+  const pc = new THREE.Mesh(g_pc, m_mo);
+  pc.position.set(16, 2, -9.5);
+  scene.add(pc);
 
 
 
@@ -204,7 +205,7 @@ var init = function() {
 
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight1.position.set(0, 0, 10);
+  directionalLight1.position.set(5, 10, 5);
   // シーンに追加
   scene.add(directionalLight1);
 
