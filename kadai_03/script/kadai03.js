@@ -150,7 +150,8 @@ var init = function() {
 
   const g_bFlame1 = new THREE.BoxGeometry(10, 2, 22);
   const g_bFlame2 = new THREE.BoxGeometry(10, 4, 2);
-  const g_bFlame3 = new THREE.BoxGeometry(10, 2, 2);
+  const g_bFlame3 = new THREE.BoxGeometry(10, 2, 1);
+  const g_bMat = new THREE.BoxGeometry(10, 2, 20);
   const g_bPillow = new THREE.BoxGeometry(6, 1, 3);
   const g_bCloth = new THREE.BoxGeometry(8, 1, 14);
 
@@ -163,12 +164,23 @@ var init = function() {
   const bFlame3 = new THREE.Mesh(g_bFlame3, m_bFlame);
   bFlame3.position.set(-12, 7, -9.5);
 
+  const bMat = new THREE.Mesh(g_bMat, m_bMat);
+  bMat.position.set(-12, 3, 2);
+
+  const bPillow = new THREE.Mesh(g_bPillow, m_bCloth);
+  bPillow.position.set(-12, 3, -5.5);
+
+  const bCloth = new THREE.Mesh(g_bCloth, m_bCloth);
+  bPillow.position.set(-12, 3, 4);
 
 
 
   bed.add(bFlame1);
   bed.add(bFlame2);
   bed.add(bFlame3);
+  bed.add(bMat);
+  bed.add(bPillow);
+  bed.add(bCloth);
   scene.add(bed);
 
 
