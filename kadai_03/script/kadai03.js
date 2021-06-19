@@ -161,7 +161,7 @@ var init = function() {
 
 
   bed.add(bFlame1);
-  scene.set(bed);
+  scene.add(bed);
 
 
 
