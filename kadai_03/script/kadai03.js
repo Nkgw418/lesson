@@ -44,6 +44,9 @@ var init = function() {
   const m_dLeg = new THREE.MeshPhongMaterial({ color: 0x505050 });
   const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_mo = new THREE.MeshPhongMaterial({ color: 0x252525 });//winの画面でも貼り付けるか
+  const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
+  const m_bMat = new THREE.MeshPhongMaterial({ color: 0x010101 });
+  const m_bCloth = new THREE.MeshPhongMaterial({ color: 0x151515 });
 
 
   //椅子
@@ -141,6 +144,43 @@ var init = function() {
   monitor.add(mo2);
   monitor.add(mo3);
   scene.add(monitor);//scene set
+
+  //ベッド
+  const bed = new THREE.Group();
+
+  const g_bFlame1 = new THREE.BoxGeometry(10, 2, 22);
+  const g_bFlame2 = new THREE.BoxGeometry(10, 4, 2);
+  const g_bFlame3 = new THREE.BoxGeometry(10, 2, 2);
+  const g_bPillow = new THREE.BoxGeometry(6, 1, 3);
+  const g_bCloth = new THREE.BoxGeometry(8, 1, 14);
+
+  const bFlame1 = new THREE.Mesh(g_bFlame1, m_bFlame);
+  bFlame1.position.set(-12, 1, 1);
+
+
+
+
+  bed.add(bFlame1);
+  scene.set(bed);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
