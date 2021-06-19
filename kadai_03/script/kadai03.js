@@ -45,7 +45,7 @@ var init = function() {
   //const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   //const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   //const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
+  //const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
   //const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
 
   //テクスチャ
@@ -64,6 +64,10 @@ var init = function() {
   const m_dBoard = new THREE.MeshPhongMaterial();
   m_dBoard.map = texture_dBoard;
 
+  const texture_bMat = textureLoader.load("img/bed/mat.jpg");
+  const m_bMat = new THREE.MeshPhongMaterial();
+  m_bMat.map = texture_bMat;
+
   const texture_bCloth = textureLoader.load("img/bed/cloth.jpg");
   const m_bCloth = new THREE.MeshPhongMaterial();
   m_bCloth.map = texture_bCloth;
@@ -77,17 +81,16 @@ var init = function() {
       new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
     ];
 
-  const texture_kb = textureLoader.load("img/keyboard.jpg")
   const m_kb = [
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({map:texture_kb,bumpMap:texture_kb,bumpscale:0.2}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/keyboard.jpg"),
+                                    bumpMap:textureLoader.load("img/keyboard-bump.jpg"),
+                                    bumpscale:0.2}),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
     ];
-
-  
 
   // バンプマップ読み込み
   const bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
@@ -97,6 +100,10 @@ var init = function() {
   const bump_cLeg = textureLoader.load("img/chair/chairLeg-bump.jpg");
   m_cLeg.bumpMap = bump_cLeg;
   m_cLeg.bumpscale = 0.2;
+
+  const bump_bMat = textureLoader.load("img/bed/mat-bump.jpg");
+  m_bMat.bumpMap = bump_bMat;
+  m_bMat.bumpscale = 0.2;
 
   const bump_bCloth = textureLoader.load("img/bed/cloth-bump.jpg");
   m_bCloth.bumpMap = bump_bCloth;
