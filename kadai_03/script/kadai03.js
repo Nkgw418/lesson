@@ -75,13 +75,9 @@ var init = function() {
   m_cLeg.bumpMap = bump_cLeg;
   m_cLeg.bumpscale = 0.2;
 
-  var bump_dLeg = textureLoader.load("img/desk/deskLeg-bump.jpg");
-  m_dLeg.bumpMap = bump_dLeg;
-  m_dLeg.bumpscale = 0.2;
+  //var bump_dLeg = textureLoader.load("img/desk/deskLeg-bump.jpg");m_dLeg.bumpMap = bump_dLeg;m_dLeg.bumpscale = 0.2;
 
-  var bump_dBoard = textureLoader.load("img/wood-bump.jpg");
-  m_dBoard.bumpMap = bump_dBoard;
-  m_dBoard.bumpscale = 0.2;
+  //var bump_dBoard = textureLoader.load("img/wood-bump.jpg");m_dBoard.bumpMap = bump_dBoard;m_dBoard.bumpscale = 0.2;
 
 
   //椅子
