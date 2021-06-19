@@ -40,13 +40,24 @@ var init = function() {
   scene.add(sp_man);
 
   //仮置きマテリアルs
-  const m_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
+  //const m_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
   const m_dLeg = new THREE.MeshPhongMaterial({ color: 0x505050 });
   const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
   const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
+
+  //テクスチャ
+  const textureLoader = new THREE.TextureLoader();
+  const texture_chair = textureLoader.load("img/chair.jpg");
+  const m_Chair = new THREE.MeshPhongMaterial();
+  m_Chair.map = texture_chair;
+
+  // バンプマップ読み込み
+  var bump_Chair = textureLoader.load("img/chair-bump.jpg");
+  m_Chair.bumpMap = bump_Chair;
+  m_Chair.bumpscale = 0.2;
 
 
   //椅子
