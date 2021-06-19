@@ -41,7 +41,7 @@ var init = function() {
 
   //仮置きマテリアルs
   //const m_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
-  const m_dLeg = new THREE.MeshPhongMaterial({ color: 0x505050 });
+  const m_dLeg = new THREE.MeshStandardMaterial({ color: 0x505050 });
   const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
