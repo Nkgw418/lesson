@@ -174,10 +174,10 @@ var init = function() {
   const mo1 = new THREE.Mesh(g_mo1, m_mo);
   mo1.position.set(6.5, 12.5, -11.5);
 
-  const mo2 = new THREE.Mesh(g_mo2, m_mo);
+  const mo2 = new THREE.Mesh(g_mo2, m_dLeg);
   mo2.position.set(6.5, 9.5, -11.5);
 
-  const mo3 = new THREE.Mesh(g_mo3, m_mo);
+  const mo3 = new THREE.Mesh(g_mo3, m_dLeg);
   mo3.position.set(6.5, 8.5, -11.5);
 
   monitor.add(mo1);
