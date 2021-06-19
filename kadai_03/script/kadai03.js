@@ -67,22 +67,22 @@ var init = function() {
   m_dBoard.map = texture_dBoard;
 
   const m_mo = [
-       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
-       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
     ];
 
-    const m_kb = [
-         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg")}),
-         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
-         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      ];
+  const m_kb = [
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+    ];
 
   // バンプマップ読み込み
   var bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
@@ -198,6 +198,7 @@ var init = function() {
   const g_kb = new THREE.BoxGeometry(5, 0.5, 2);
   const kb = new THREE.Mesh(g_kb, m_kb);
   kb.position.set(6.5, 8.25, -9);
+  scene.add(kb);
 
   //ベッド
   const bed = new THREE.Group();
