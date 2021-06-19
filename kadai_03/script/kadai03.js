@@ -59,7 +59,7 @@ var init = function() {
   m_cLeg.map = texture_cLeg;
 
   const texture_dLeg = textureLoader.load("img/desk/deskLeg.jpg");
-  const m_dLeg = new THREE.MeshStandardMaterial();
+  const m_dLeg = new THREE.MeshStandardMaterial({ metal:true });
   m_dLeg.map = texture_dLeg;
 
   const texture_dBoard = textureLoader.load("img/wood.jpg");
