@@ -87,18 +87,23 @@ var init = function() {
     ];
 
   // バンプマップ読み込み
-  var bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
+  const bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
   m_Chair.bumpscale = 0.2;
 
-  var bump_cLeg = textureLoader.load("img/chair/chairLeg-bump.jpg");
+  const bump_cLeg = textureLoader.load("img/chair/chairLeg-bump.jpg");
   m_cLeg.bumpMap = bump_cLeg;
   m_cLeg.bumpscale = 0.2;
 
-  var bump_bMat = textureLoader.load("img/bed/mat-bump.jpg");
+  const bump_bMat = textureLoader.load("img/bed/cloth-bump.jpg");
   m_bMat.bumpMap = bump_bMat;
   m_bMat.bumpscale = 0.2;
 
+  const bump_kb = [
+    ,,textureLoader.load("img/keyboard-bump.jpg"),,,,
+  ];
+  m_kb.bumpMap = bump_kb;
+  m_kb.bumpscale = 0.2;
 
   //椅子
   const chair = new THREE.Group();
