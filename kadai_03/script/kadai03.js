@@ -44,7 +44,7 @@ var init = function() {
   //const m_dLeg = new THREE.MeshStandardMaterial({ color: 0x505050 });
   //const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   //const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
-  const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
+  //const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
   const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
 
@@ -64,6 +64,10 @@ var init = function() {
   const m_dBoard = new THREE.MeshPhongMaterial();
   m_dBoard.map = texture_dBoard;
 
+  const texture_bMat = textureLoader.load("img/bed/mat.jpg");
+  const m_bMat = new THREE.MeshPhongMaterial();
+  m_bMat.map = texture_bMat;
+
   const m_mo = [
       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
@@ -74,11 +78,11 @@ var init = function() {
     ];
 
   const m_kb = [
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg")}),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
     ];
 
@@ -91,9 +95,9 @@ var init = function() {
   m_cLeg.bumpMap = bump_cLeg;
   m_cLeg.bumpscale = 0.2;
 
-  //var bump_dLeg = textureLoader.load("img/desk/deskLeg-bump.jpg");m_dLeg.bumpMap = bump_dLeg;m_dLeg.bumpscale = 0.2;
-
-  //var bump_dBoard = textureLoader.load("img/wood-bump.jpg");m_dBoard.bumpMap = bump_dBoard;m_dBoard.bumpscale = 0.2;
+  var bump_bMat = textureLoader.load("img/bed/mat-bump.jpg");
+  m_bMat.bumpMap = bump_bMat;
+  m_bMat.bumpscale = 0.2;
 
 
   //椅子
@@ -208,13 +212,13 @@ var init = function() {
   const g_bPillow = new THREE.BoxGeometry(6, 1, 3);
   const g_bCloth = new THREE.BoxGeometry(8, 1, 14);
 
-  const bFlame1 = new THREE.Mesh(g_bFlame1, m_bFlame);
+  const bFlame1 = new THREE.Mesh(g_bFlame1, m_dBoard);
   bFlame1.position.set(-12, 1, 1);
 
-  const bFlame2 = new THREE.Mesh(g_bFlame2, m_bFlame);
+  const bFlame2 = new THREE.Mesh(g_bFlame2, m_dBoard);
   bFlame2.position.set(-12, 4, -9);
 
-  const bFlame3 = new THREE.Mesh(g_bFlame3, m_bFlame);
+  const bFlame3 = new THREE.Mesh(g_bFlame3, m_dBoard);
   bFlame3.position.set(-12, 7, -9.5);
 
   const bMat = new THREE.Mesh(g_bMat, m_bMat);
