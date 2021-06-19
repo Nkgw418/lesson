@@ -69,19 +69,19 @@ var init = function() {
   m_bCloth.map = texture_bCloth;
 
   const m_mo = [
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/desktop.jpg")}),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
     ];
 
   const m_kb = [
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg"),
-                                    bumpMap:THREE.ImageUtils.loadTexture("img/keyboard-bump.jpg"),
+      new THREE.MeshLambertMaterial({map:textureLoader.load("img/keyboard.jpg"),
+                                    bumpMap:textureLoader.load("img/keyboard-bump.jpg"),
                                     bumpscale:0.2}),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
