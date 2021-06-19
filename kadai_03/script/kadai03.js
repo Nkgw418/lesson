@@ -76,12 +76,12 @@ var init = function() {
     ];
 
   const m_kb = [
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshLambertMaterial({ color: 0x909090 }),
     ];
 
   // バンプマップ読み込み
