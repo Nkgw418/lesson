@@ -66,6 +66,15 @@ var init = function() {
   const m_dBoard = new THREE.MeshPhongMaterial();
   m_dBoard.map = texture_dBoard;
 
+  const m_mo = [
+       ,///new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       ,//new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       ,//new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       ,//new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
+       //new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+    ];
+
   // バンプマップ読み込み
   var bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
