@@ -45,7 +45,7 @@ var init = function() {
   //const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   //const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   //const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
+  //const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
   const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
 
   //テクスチャ
