@@ -157,10 +157,18 @@ var init = function() {
   const bFlame1 = new THREE.Mesh(g_bFlame1, m_bFlame);
   bFlame1.position.set(-12, 1, 1);
 
+  const bFlame2 = new THREE.Mesh(g_bFlame2, m_bFlame);
+  bFlame2.position.set(-12, 4, -9);
+
+  const bFlame3 = new THREE.Mesh(g_bFlame3, m_bFlame);
+  bFlame3.position.set(-12, 7, -9.5);
+
 
 
 
   bed.add(bFlame1);
+  bed.add(bFlame2);
+  bed.add(bFlame3);
   scene.add(bed);
 
 
