@@ -77,16 +77,23 @@ var init = function() {
       new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
     ];
 
-  const m_kb = [
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/keyboard.jpg"),
-                                    bumpMap:textureLoader.load("img/keyboard-bump.jpg"),
-                                    bumpscale:0.2}),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-    ];
+  //const m_kb = [
+    //  new THREE.MeshLambertMaterial({ color: 0x909090 }),
+    //  new THREE.MeshLambertMaterial({ color: 0x909090 }),
+    //  new THREE.MeshLambertMaterial({map:textureLoader.load("img/keyboard.jpg"),
+    //                                bumpMap:textureLoader.load("img/keyboard-bump.jpg"),
+    //                                bumpscale:0.2}),
+    //  new THREE.MeshLambertMaterial({ color: 0x909090 }),
+    //  new THREE.MeshLambertMaterial({ color: 0x909090 }),
+    //  new THREE.MeshLambertMaterial({ color: 0x909090 }),
+    //];
+
+    const texture_kb = textureLoader.load("img/keyboard.jpg");
+    const m_kb = new THREE.MeshPhongMaterial();
+    m_kb.map = texture_kb;
+    const bump_kb = textureLoader.load("img/keyboard-bump.jpg");
+    m_kb.bumpMap = bump_kb;
+    m_kb.bumpscale = 0.2;
 
   // バンプマップ読み込み
   const bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
