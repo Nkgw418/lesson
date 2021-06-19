@@ -43,10 +43,10 @@ var init = function() {
   const m_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
   const m_dLeg = new THREE.MeshPhongMaterial({ color: 0x505050 });
   const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  const m_mo = new THREE.MeshPhongMaterial({ color: 0x252525 });//winの画面でも貼り付けるか
+  const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  const m_bMat = new THREE.MeshPhongMaterial({ color: 0x010101 });
-  const m_bCloth = new THREE.MeshPhongMaterial({ color: 0x151515 });
+  const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
+  const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
 
 
   //椅子
@@ -171,7 +171,7 @@ var init = function() {
   bPillow.position.set(-12, 3, -5.5);
 
   const bCloth = new THREE.Mesh(g_bCloth, m_bCloth);
-  bPillow.position.set(-12, 3, 4);
+  bCloth.position.set(-12, 3, 4);
 
 
 
