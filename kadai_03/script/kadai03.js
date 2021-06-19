@@ -75,6 +75,15 @@ var init = function() {
        new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
     ];
 
+    const m_kb = [
+         new THREE.MeshLambertMaterial({color: 0x757575}),
+         new THREE.MeshLambertMaterial({color: 0x757575}),
+         new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg")}),
+         new THREE.MeshLambertMaterial({color: 0x757575}),
+         new THREE.MeshLambertMaterial({color: 0x757575}),
+         new THREE.MeshLambertMaterial({color: 0x757575}),
+      ];
+
   // バンプマップ読み込み
   var bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
@@ -184,6 +193,11 @@ var init = function() {
   monitor.add(mo2);
   monitor.add(mo3);
   scene.add(monitor);//scene set
+
+  //キーボード
+  const g_kb = new THREE.BoxGeometry(5, 0.5, 2);
+  const kb = new THREE.Mesh(g_kb, m_kb);
+  kb.position.set(6.5, 8.25, -9);
 
   //ベッド
   const bed = new THREE.Group();
