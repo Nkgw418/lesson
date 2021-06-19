@@ -45,8 +45,8 @@ var init = function() {
   //const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   //const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   //const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  //const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
-  const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
+  const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
+  //const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
 
   //テクスチャ
   const textureLoader = new THREE.TextureLoader();
@@ -64,9 +64,9 @@ var init = function() {
   const m_dBoard = new THREE.MeshPhongMaterial();
   m_dBoard.map = texture_dBoard;
 
-  const texture_bMat = textureLoader.load("img/bed/mat.jpg");
-  const m_bMat = new THREE.MeshPhongMaterial();
-  m_bMat.map = texture_bMat;
+  const texture_bCloth = textureLoader.load("img/bed/cloth.jpg");
+  const m_bCloth = new THREE.MeshPhongMaterial();
+  m_bCloth.map = texture_bCloth;
 
   const m_mo = [
       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
