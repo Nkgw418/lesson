@@ -95,9 +95,9 @@ var init = function() {
   m_cLeg.bumpMap = bump_cLeg;
   m_cLeg.bumpscale = 0.2;
 
-  const bump_bMat = textureLoader.load("img/bed/cloth-bump.jpg");
-  m_bMat.bumpMap = bump_bMat;
-  m_bMat.bumpscale = 0.2;
+  const bump_bCloth = textureLoader.load("img/bed/cloth-bump.jpg");
+  m_bCloth.bumpMap = bump_bCloth;
+  m_bCloth.bumpscale = 0.2;
 
   const bump_kb = [
     ,,textureLoader.load("img/keyboard-bump.jpg"),,,,
