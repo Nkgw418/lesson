@@ -41,8 +41,8 @@ var init = function() {
 
   //仮置きマテリアルs
   //const m_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
-  const m_dLeg = new THREE.MeshStandardMaterial({ color: 0x505050 });
-  const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
+  //const m_dLeg = new THREE.MeshStandardMaterial({ color: 0x505050 });
+  //const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
   const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
   const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
@@ -58,6 +58,14 @@ var init = function() {
   const m_cLeg = new THREE.MeshPhongMaterial();
   m_cLeg.map = texture_cLeg;
 
+  const texture_dLeg = textureLoader.load("img/desk/deskLeg.jpg");
+  const m_dLeg = new THREE.MeshPhongMaterial();
+  m_dLeg.map = texture_dLeg;
+
+  const texture_dBoard = textureLoader.load("img/wood.jpg");
+  const m_dBoard = new THREE.MeshPhongMaterial();
+  m_dBoard.map = texture_dBoard;
+
   // バンプマップ読み込み
   var bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
@@ -66,6 +74,14 @@ var init = function() {
   var bump_cLeg = textureLoader.load("img/chair/chairLeg-bump.jpg");
   m_cLeg.bumpMap = bump_cLeg;
   m_cLeg.bumpscale = 0.2;
+
+  var bump_dLeg = textureLoader.load("img/desk/deskLeg-bump.jpg");
+  m_dLeg.bumpMap = bump_dLeg;
+  m_dLeg.bumpscale = 0.2;
+
+  var bump_dBoard = textureLoader.load("img/wood-bump.jpg");
+  m_dBoard.bumpMap = bump_dBoard;
+  m_dBoard.bumpscale = 0.2;
 
 
   //椅子
