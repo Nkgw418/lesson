@@ -80,7 +80,9 @@ var init = function() {
   const m_kb = [
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/keyboard.jpg"),
+                                    bumpMap:THREE.ImageUtils.loadTexture("img/keyboard-bump.jpg"),
+                                    bumpscale:0.2}),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
       new THREE.MeshLambertMaterial({ color: 0x909090 }),
@@ -98,12 +100,6 @@ var init = function() {
   const bump_bCloth = textureLoader.load("img/bed/cloth-bump.jpg");
   m_bCloth.bumpMap = bump_bCloth;
   m_bCloth.bumpscale = 0.2;
-
-  const bump_kb = [
-    ,,textureLoader.load("img/keyboard-bump.jpg"),,,,
-  ];
-  m_kb.bumpMap = bump_kb;
-  m_kb.bumpscale = 0.2;
 
   //椅子
   const chair = new THREE.Group();
