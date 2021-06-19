@@ -67,12 +67,12 @@ var init = function() {
   m_dBoard.map = texture_dBoard;
 
   const m_mo = [
-       ,///new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       ,//new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       ,//new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
-       ,//new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
        new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/desktop.jpg")}),
-       //new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
+       new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/monitor/black.jpg")}),
     ];
 
   // バンプマップ読み込み
@@ -221,11 +221,7 @@ var init = function() {
   bed.add(bCloth);
   scene.add(bed);
 
-  //PC
-  const g_pc = new THREE.BoxGeometry(2, 4, 5);
-  const pc = new THREE.Mesh(g_pc, m_mo);
-  pc.position.set(16, 2, -9.5);
-  scene.add(pc);
+
 
 
 
