@@ -65,12 +65,12 @@ const init = function() {
   m_bPillow.map = texture_bPillow;
 
   const m_mo = [
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({ color: 0x000000 }),
+      new THREE.MeshLambertMaterial({ color: 0x000000 }),
+      new THREE.MeshLambertMaterial({ color: 0x000000 }),
+      new THREE.MeshLambertMaterial({ color: 0x000000 )}),
       new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/desktop.jpg")}),
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
+      new THREE.MeshLambertMaterial({ color: 0x000000 )}),
     ];
 
   const m_kb = [
