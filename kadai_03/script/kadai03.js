@@ -254,11 +254,10 @@ var init = function() {
   directionalLight1.position.set(5, 10, 5);
   // シーンに追加
   scene.add(directionalLight1);
-  //平行光源2
-  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight2.position.set(0, 15, 0);
-  // シーンに追加
-  scene.add(directionalLight2);
+  // 照明を作成
+  var light = new THREE.SpotLight(0xFFFFFF, 2, 100, Math.PI / 4, 1);
+  light.position.set(0,10,10);
+  scene.add(light);
 
   // コントローラーを作成
   const controls_c = new THREE.OrbitControls(camera,document.body);
