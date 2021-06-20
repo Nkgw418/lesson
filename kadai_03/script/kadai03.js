@@ -1,10 +1,10 @@
-var init = function() {
+const init = function() {
 
-  var width = 800,
-      height = 600;
+  const width = 800,
+        height = 600;
 
   // レンダラーを作成
-  var renderer = new THREE.WebGLRenderer();
+  const renderer = new THREE.WebGLRenderer();
   renderer.setSize(width, height);
   document.body.appendChild(renderer.domElement);
   renderer.setClearColor(0xe0ffff);
@@ -255,7 +255,7 @@ var init = function() {
   // シーンに追加
   scene.add(directionalLight1);
   // 平行光源2
-  var directionalLight2 = new THREE.directionalLight(0xFFFFFF, 1);
+  const directionalLight2 = new THREE.FirectionalLight(0xFFFFFF, 1);
   directionalLight2.position.set(0,10,10);
   scene.add(directionalLight12);
 
@@ -264,7 +264,7 @@ var init = function() {
   const controls_l = new THREE.OrbitControls(directionalLight1,document.body);
 
   // 初回実行
-  var update = function() {
+  const update = function() {
     requestAnimationFrame(update);
 
     renderer.render(scene, camera);
