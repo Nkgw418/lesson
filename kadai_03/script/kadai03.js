@@ -257,7 +257,7 @@ const init = function() {
   // 平行光源2
   const directionalLight2 = new THREE.DirectionalLight(0xFFFFFF, 1);
   directionalLight2.position.set(0,10,10);
-  scene.add(directionalLight12);
+  scene.add(directionalLight2);
 
   // コントローラーを作成
   const controls_c = new THREE.OrbitControls(camera,document.body);
