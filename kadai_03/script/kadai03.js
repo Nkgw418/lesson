@@ -53,15 +53,15 @@ const init = function() {
   m_dBoard.map = texture_dBoard;
 
   const texture_bMat = textureLoader.load("img/bed/mat.jpg");
-  const m_bMat = new THREE.MeshPhongMaterial();
+  const m_bMat = new THREE.MeshLambertMaterial();
   m_bMat.map = texture_bMat;
 
   const texture_bCloth = textureLoader.load("img/bed/cloth.jpg");
-  const m_bCloth = new THREE.MeshPhongMaterial();
+  const m_bCloth = new THREE.MeshLambertMaterial();
   m_bCloth.map = texture_bCloth;
 
   const texture_bPillow = textureLoader.load("img/bed/pillow.jpg");
-  const m_bPillow = new THREE.MeshPhongMaterial();
+  const m_bPillow = new THREE.MeshLambertMaterial();
   m_bPillow.map = texture_bPillow;
 
   const m_mo = [
