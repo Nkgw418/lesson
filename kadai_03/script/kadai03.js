@@ -255,24 +255,6 @@ var init = function() {
   bed.add(bCloth);
   scene.add(bed);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight1.position.set(5, 10, 5);
