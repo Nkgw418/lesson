@@ -14,8 +14,7 @@ var init = function() {
 
   // カメラを作成
   const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
-  camera.position.set(5,10,5);
-  //camera.lookAt(0,50,0);
+  camera.position.set(15,10,15);
 
   //軸
   const axis = new THREE.AxisHelper(125);
@@ -27,7 +26,7 @@ var init = function() {
   const helper = new THREE.Group();
   helper.add(axis);
   helper.add(grid);
-  
+
   // テクスチャー読み込み
   const tl_man = new THREE.TextureLoader();
   const texture_man = tl_man.load("img/human.png");
@@ -255,6 +254,11 @@ var init = function() {
   directionalLight1.position.set(5, 10, 5);
   // シーンに追加
   scene.add(directionalLight1);
+  //平行光源2
+  const directionalLight2 = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight2.position.set(0, 15, 0);
+  // シーンに追加
+  scene.add(directionalLight2);
 
   // コントローラーを作成
   const controls_c = new THREE.OrbitControls(camera,document.body);
