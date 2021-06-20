@@ -68,9 +68,9 @@ const init = function() {
       new THREE.MeshLambertMaterial({ color: 0x000000 }),
       new THREE.MeshLambertMaterial({ color: 0x000000 }),
       new THREE.MeshLambertMaterial({ color: 0x000000 }),
-      new THREE.MeshLambertMaterial({ color: 0x000000 )}),
+      new THREE.MeshLambertMaterial({ color: 0x000000 }),
       new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/desktop.jpg")}),
-      new THREE.MeshLambertMaterial({ color: 0x000000 )}),
+      new THREE.MeshLambertMaterial({ color: 0x000000 }),
     ];
 
   const m_kb = [
