@@ -27,8 +27,7 @@ var init = function() {
   const helper = new THREE.Group();
   helper.add(axis);
   helper.add(grid);
-  scene.add(helper);
-
+  
   // テクスチャー読み込み
   const tl_man = new THREE.TextureLoader();
   const texture_man = tl_man.load("img/human.png");
@@ -37,16 +36,6 @@ var init = function() {
   const sp_man = new THREE.Sprite(mat_man);
   sp_man.scale.set(3,10,1);
   sp_man.position.set(0,5,0);
-  scene.add(sp_man);
-
-  //仮置きマテリアルs
-  //const m_Chair = new THREE.MeshPhongMaterial({ color: 0x505050 });
-  //const m_dLeg = new THREE.MeshStandardMaterial({ color: 0x505050 });
-  //const m_dBoard = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  //const m_mo = new THREE.MeshPhongMaterial({ color: 0x757575 });//winの画面でも貼り付けるか
-  //const m_bFlame = new THREE.MeshPhongMaterial({ color: 0xdeb887 });
-  //const m_bMat = new THREE.MeshPhongMaterial({ color: 0xfffafa });
-  //const m_bCloth = new THREE.MeshPhongMaterial({ color: 0xf0f8ff });
 
   //テクスチャ
   const textureLoader = new THREE.TextureLoader();
@@ -140,7 +129,6 @@ var init = function() {
   chair.add(cLeg2);
   chair.add(cBoard);
   chair.add(cBack);
-  scene.add(chair);//scene set
 
   //机
   const desk = new THREE.Group();
@@ -190,7 +178,6 @@ var init = function() {
   desk.add(dBoard2);
   desk.add(dBoard3);
   desk.add(dBoard4);
-  scene.add(desk);//scene set
 
   //モニター
   const monitor = new THREE.Group();
@@ -211,13 +198,11 @@ var init = function() {
   monitor.add(mo1);
   monitor.add(mo2);
   monitor.add(mo3);
-  scene.add(monitor);//scene set
 
   //キーボード
   const g_kb = new THREE.BoxGeometry(5, 0.5, 2);
   const kb = new THREE.Mesh(g_kb, m_kb);
   kb.position.set(6.5, 8.25, -9);
-  scene.add(kb);
 
   //ベッド
   const bed = new THREE.Group();
@@ -254,6 +239,16 @@ var init = function() {
   bed.add(bPillow);
   bed.add(bCloth);
   scene.add(bed);
+
+  const all = new THREE.Group();
+  all.add(helper);
+  all.add(sp_man);
+  all.add(chair);
+  all.add(desk);
+  all.add(monitor);
+  all.add(bed);
+  all.add(kb);
+  scene.add(all);
 
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
