@@ -72,6 +72,10 @@ var init = function() {
   const m_bCloth = new THREE.MeshPhongMaterial();
   m_bCloth.map = texture_bCloth;
 
+  const texture_bPillow = textureLoader.load("img/bed/pillow.jpg");
+  const m_bPillow = new THREE.MeshPhongMaterial();
+  m_bPillow.map = texture_bPillow;
+
   const m_mo = [
       new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
       new THREE.MeshLambertMaterial({map:textureLoader.load("img/monitor/black.jpg")}),
@@ -108,6 +112,10 @@ var init = function() {
   const bump_bCloth = textureLoader.load("img/bed/cloth-bump.jpg");
   m_bCloth.bumpMap = bump_bCloth;
   m_bCloth.bumpscale = 0.2;
+
+  const bump_bPillow = textureLoader.load("img/bed/pillow-bump.jpg");
+  m_bPillow.bumpMap = bump_bPillow;
+  m_bPillow.bumpscale = 0.2;
 
   //椅子
   const chair = new THREE.Group();
