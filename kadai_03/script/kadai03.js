@@ -53,15 +53,15 @@ const init = function() {
   m_dBoard.map = texture_dBoard;
 
   const texture_bMat = textureLoader.load("img/bed/mat.jpg");
-  const m_bMat = new THREE.MeshLambertMaterial();
+  const m_bMat = new THREE.MeshPhongMaterial();
   m_bMat.map = texture_bMat;
 
   const texture_bCloth = textureLoader.load("img/bed/cloth.jpg");
-  const m_bCloth = new THREE.MeshLambertMaterial();
+  const m_bCloth = new THREE.MeshPhongMaterial();
   m_bCloth.map = texture_bCloth;
 
   const texture_bPillow = textureLoader.load("img/bed/pillow.jpg");
-  const m_bPillow = new THREE.MeshLambertMaterial();
+  const m_bPillow = new THREE.MeshPhongMaterial();
   m_bPillow.map = texture_bPillow;
 
   const m_mo = [
@@ -74,14 +74,14 @@ const init = function() {
     ];
 
   const m_kb = [
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({map:textureLoader.load("img/keyboard.jpg"),
+      new THREE.MeshPhongMaterial({ color: 0x909090 }),
+      new THREE.MeshPhongMaterial({ color: 0x909090 }),
+      new THREE.MeshPhongMaterial({map:textureLoader.load("img/keyboard.jpg"),
                                     bumpMap:textureLoader.load("img/keyboard-bump.jpg"),
                                     bumpscale:0.2}),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
-      new THREE.MeshLambertMaterial({ color: 0x909090 }),
+      new THREE.MeshPhongMaterial({ color: 0x909090 }),
+      new THREE.MeshPhongMaterial({ color: 0x909090 }),
+      new THREE.MeshPhongMaterial({ color: 0x909090 }),
     ];
 
   // バンプマップ読み込み
