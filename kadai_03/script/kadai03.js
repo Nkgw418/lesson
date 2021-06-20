@@ -241,7 +241,7 @@ var init = function() {
   const bMat = new THREE.Mesh(g_bMat, m_bMat);
   bMat.position.set(-12, 3, 2);
 
-  const bPillow = new THREE.Mesh(g_bPillow, m_bCloth);
+  const bPillow = new THREE.Mesh(g_bPillow, m_bPillow);
   bPillow.position.set(-12, 4.5, -5.5);
 
   const bCloth = new THREE.Mesh(g_bCloth, m_bCloth);
