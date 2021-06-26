@@ -106,14 +106,14 @@ const init = function() {
 
     let date = new Date();
     let hours = date.getHours();
-    let minutes = date.getMinutes();
+    //let minutes = date.getMinutes();
     //let seconds = date.getSeconds();
     let time = date.getTime();
 
     //second.rotation.x += 0.01;
     pivot_s.rotation.x = -1*(Math.PI/30)*((time%60000)/1000);
-    pivot_m.rotation.x = -1*(Math.PI/30)*minutes;
-    pivot_h.rotation.x = -1*(Math.PI/6)*hours;
+    pivot_m.rotation.x = -1*(Math.PI/30)*((time%3600000)/60000);
+    pivot_h.rotation.x = -1*((Math.PI/6)*hours + (Math.PI/6/30)*((time%3600000)/60000));
 
     renderer.render(scene, camera);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
