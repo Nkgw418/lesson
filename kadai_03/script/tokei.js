@@ -14,7 +14,7 @@ const init = function() {
 
   // カメラを作成
   const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
-  camera.position.set(30,0,0);
+  camera.position.set(40,0,0);
 
   //軸
   const axis = new THREE.AxisHelper(125);
@@ -59,35 +59,31 @@ const init = function() {
   // テクスチャー読み込み
   const textureLoader = new THREE.TextureLoader();
   const texture0 = textureLoader.load("img/tokei/zero.png");
-  //const mat0 = new THREE.MeshLambertMaterial({transparent: true});
   const mat0 = new THREE.SpriteMaterial({ map: texture0,});
   mat0.map = texture0;
   const texture3 = textureLoader.load("img/tokei/three.png");
-  const mat3 = new THREE.MeshLambertMaterial({transparent: true});
+  const mat3 = new THREE.SpriteMaterial({ map: texture3,});
   mat3.map = texture3;
   const texture6 = textureLoader.load("img/tokei/six.png");
-  const mat6 = new THREE.MeshLambertMaterial({transparent: true});
+  const mat6 = new THREE.SpriteMaterial({ map: texture6,});
   mat6.map = texture6;
   const texture9 = textureLoader.load("img/tokei/nine.png");
-  const mat9 = new THREE.MeshLambertMaterial({transparent: true});
+  const mat9 = new THREE.SpriteMaterial({ map: texture9,});
   mat9.map = texture9;
 
-  // 鳥0を作成(原点に作成)
   const g_moji = new THREE.PlaneGeometry(3, 3);
-  //const moji0 = new THREE.Mesh(g_moji, mat0);
   const moji0 = new THREE.Sprite(mat0);
   moji0.position.set(0,11,0);
   moji0.scale.set(3,3,1);
-  //moji0.rotation.y = Math.PI/2;
-  const moji3 = new THREE.Mesh(g_moji, mat3);
+  const moji0 = new THREE.Sprite(mat0);
   moji3.position.set(0,0,-11);
-  moji3.rotation.y = Math.PI/2;
-  const moji6 = new THREE.Mesh(g_moji, mat6);
+  moji3.scale.set(3,3,1);
+  const moji0 = new THREE.Sprite(mat0);
   moji6.position.set(0,-11,0);
-  moji6.rotation.y = Math.PI/2;
-  const moji9 = new THREE.Mesh(g_moji, mat9);
+  moji6.scale.set(3,3,1);
+  const moji0 = new THREE.Sprite(mat0);
   moji9.position.set(0,0,11);
-  moji9.rotation.y = Math.PI/2;
+  moji9.scale.set(3,3,1);
 
   scene.add(moji0);
   scene.add(moji3);
