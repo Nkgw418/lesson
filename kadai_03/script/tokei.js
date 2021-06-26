@@ -16,18 +16,6 @@ const init = function() {
   const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
   camera.position.set(40,0,0);
 
-  //軸
-  const axis = new THREE.AxisHelper(125);
-  axis.castShadow = true;
-
-  //グリッド
-  const grid = new THREE.GridHelper(50,50);
-
-  const helper = new THREE.Group();
-  helper.add(axis);
-  helper.add(grid);
-  scene.add(helper);
-
   const g_second = new THREE.BoxGeometry(0.1,10,0.1);
   const m_second = new THREE.MeshPhongMaterial({ color: 0xff0000 });
   const second = new THREE.Mesh(g_second, m_second);
