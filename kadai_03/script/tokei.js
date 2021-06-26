@@ -75,13 +75,13 @@ const init = function() {
   const moji0 = new THREE.Sprite(mat0);
   moji0.position.set(0,11,0);
   moji0.scale.set(3,3,1);
-  const moji0 = new THREE.Sprite(mat0);
+  const moji3 = new THREE.Sprite(mat3);
   moji3.position.set(0,0,-11);
   moji3.scale.set(3,3,1);
-  const moji0 = new THREE.Sprite(mat0);
+  const moji6 = new THREE.Sprite(mat6);
   moji6.position.set(0,-11,0);
   moji6.scale.set(3,3,1);
-  const moji0 = new THREE.Sprite(mat0);
+  const moji9 = new THREE.Sprite(mat9);
   moji9.position.set(0,0,11);
   moji9.scale.set(3,3,1);
 
