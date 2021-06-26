@@ -77,6 +77,7 @@ const init = function() {
   //const moji0 = new THREE.Mesh(g_moji, mat0);
   const moji0 = new THREE.Sprite(mat0);
   moji0.position.set(0,11,0);
+  moji0.scale.set(3,3,1);
   //moji0.rotation.y = Math.PI/2;
   const moji3 = new THREE.Mesh(g_moji, mat3);
   moji3.position.set(0,0,-11);
