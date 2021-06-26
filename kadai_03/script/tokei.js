@@ -75,12 +75,16 @@ const init = function() {
   var g_moji = new THREE.PlaneGeometry(3, 3);
   var moji0 = new THREE.Mesh(g_moji, mat0);
   moji0.position.set(0,13,0);
+  moji0.rotation.y = Math.PI/2;
   var moji3 = new THREE.Mesh(g_moji, mat3);
   moji3.position.set(0,0,-13);
+  moji3.rotation.y = Math.PI/2;
   var moji6 = new THREE.Mesh(g_moji, mat6);
   moji6.position.set(0,-13,0);
+  moji6.rotation.y = Math.PI/2;
   var moji9 = new THREE.Mesh(g_moji, mat9);
   moji9.position.set(0,0,13);
+  moji9.rotation.y = Math.PI/2;
 
   scene.add(moji0);
   scene.add(moji3);
