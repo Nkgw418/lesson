@@ -32,21 +32,21 @@ const init = function() {
   const m_second = new THREE.MeshPhongMaterial({ color: 0xff0000 });
   const second = new THREE.Mesh(g_second, m_second);
   second.position.set(0,5,0);
-  var pivot_s = new THREE.Object3D();
+  const pivot_s = new THREE.Object3D();
   pivot_s.add(second);
 
   const g_minute = new THREE.BoxGeometry(0.5,10,0.5);
   const m_minute = new THREE.MeshPhongMaterial({ color: 0x808080 });
   const minute = new THREE.Mesh(g_minute, m_minute);
   minute.position.set(0,5,0);
-  var pivot_m = new THREE.Object3D();
+  const pivot_m = new THREE.Object3D();
   pivot_m.add(minute);
 
   const g_hour = new THREE.BoxGeometry(0.5,5,0.5);
   const m_hour = new THREE.MeshPhongMaterial({ color: 0x808080 });
   const hour = new THREE.Mesh(g_hour, m_hour);
   hour.position.set(0,2.5,0);
-  var pivot_h = new THREE.Object3D();
+  const pivot_h = new THREE.Object3D();
   pivot_h.add(hour);
 
   const g_center = new THREE.CylinderGeometry(0.5,0.5,0.5,32)
@@ -57,33 +57,35 @@ const init = function() {
 
 
   // テクスチャー読み込み
-  var textureLoader = new THREE.TextureLoader();
-  var texture0 = textureLoader.load("img/tokei/zero.png");
-  var mat0 = new THREE.MeshLambertMaterial({transparent: true});
+  const textureLoader = new THREE.TextureLoader();
+  const texture0 = textureLoader.load("img/tokei/zero.png");
+  //const mat0 = new THREE.MeshLambertMaterial({transparent: true});
+  const mat0 = new THREE.SpriteMaterial({ map: texture0,});
   mat0.map = texture0;
-  var texture3 = textureLoader.load("img/tokei/three.png");
-  var mat3 = new THREE.MeshLambertMaterial({transparent: true});
+  const texture3 = textureLoader.load("img/tokei/three.png");
+  const mat3 = new THREE.MeshLambertMaterial({transparent: true});
   mat3.map = texture3;
-  var texture6 = textureLoader.load("img/tokei/six.png");
-  var mat6 = new THREE.MeshLambertMaterial({transparent: true});
+  const texture6 = textureLoader.load("img/tokei/six.png");
+  const mat6 = new THREE.MeshLambertMaterial({transparent: true});
   mat6.map = texture6;
-  var texture9 = textureLoader.load("img/tokei/nine.png");
-  var mat9 = new THREE.MeshLambertMaterial({transparent: true});
+  const texture9 = textureLoader.load("img/tokei/nine.png");
+  const mat9 = new THREE.MeshLambertMaterial({transparent: true});
   mat9.map = texture9;
 
   // 鳥0を作成(原点に作成)
-  var g_moji = new THREE.PlaneGeometry(3, 3);
-  var moji0 = new THREE.Mesh(g_moji, mat0);
-  moji0.position.set(0,13,0);
-  moji0.rotation.y = Math.PI/2;
-  var moji3 = new THREE.Mesh(g_moji, mat3);
-  moji3.position.set(0,0,-13);
+  const g_moji = new THREE.PlaneGeometry(3, 3);
+  //const moji0 = new THREE.Mesh(g_moji, mat0);
+  const moji0 = new THREE.Sprite(mat0);
+  moji0.position.set(0,11,0);
+  //moji0.rotation.y = Math.PI/2;
+  const moji3 = new THREE.Mesh(g_moji, mat3);
+  moji3.position.set(0,0,-11);
   moji3.rotation.y = Math.PI/2;
-  var moji6 = new THREE.Mesh(g_moji, mat6);
-  moji6.position.set(0,-13,0);
+  const moji6 = new THREE.Mesh(g_moji, mat6);
+  moji6.position.set(0,-11,0);
   moji6.rotation.y = Math.PI/2;
-  var moji9 = new THREE.Mesh(g_moji, mat9);
-  moji9.position.set(0,0,13);
+  const moji9 = new THREE.Mesh(g_moji, mat9);
+  moji9.position.set(0,0,11);
   moji9.rotation.y = Math.PI/2;
 
   scene.add(moji0);
