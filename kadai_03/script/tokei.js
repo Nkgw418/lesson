@@ -141,6 +141,7 @@ const init = function() {
   scene.add(pivot_s);
   scene.add(pivot_m);
   scene.add(pivot_h);
+  scene.add(minute1);
   
 
   // 平行光源1
@@ -172,39 +173,8 @@ const init = function() {
     pivot_m.rotation.x = -1*(Math.PI/30)*((time%3600000)/60000);
     pivot_h.rotation.x = -1*((Math.PI/6)*hours+(Math.PI/6/60)*((time%3600000)/60000));
 
-    switch(minutes%10){
-      case 0:
-        minute1 = new THREE.Sprite(mat0);
-        break;
-      case 1:
-        minute1 = new THREE.Sprite(mat1);
-        break;
-      case 2:
-        minute1 = new THREE.Sprite(mat2);
-        break;
-      case 3:
-        minute1 = new THREE.Sprite(mat3);
-        break;
-      case 4:
-        minute1 = new THREE.Sprite(mat4);
-        break;
-      case 5:
-        minute1 = new THREE.Sprite(mat5);
-        break;
-      case 6:
-        minute1 = new THREE.Sprite(mat6);
-        break;
-      case 7:
-        minute1 = new THREE.Sprite(mat7);
-        break;
-      case 8:
-        minute1 = new THREE.Sprite(mat8);
-        break;
-      case 9:
-        minute1 = new THREE.Sprite(mat9);
-        break;
-    }
-    scene.add(minute1);
+    
+    clock(minutes%10, minute1);
 
     renderer.render(scene, camera);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -218,6 +188,43 @@ const init = function() {
     // レンダリング
     renderer.render(scene, camera);
     requestAnimationFrame(tick);
+  }
+
+  function clock(jikan, upd){
+    scene.remove(upd);
+    switch(jikan){
+      case 0:
+        upd = new THREE.Sprite(mat0);
+        break;
+      case 1:
+        upd = new THREE.Sprite(mat1);
+        break;
+      case 2:
+        upd = new THREE.Sprite(mat2);
+        break;
+      case 3:
+        upd = new THREE.Sprite(mat3);
+        break;
+      case 4:
+        upd = new THREE.Sprite(mat4);
+        break;
+      case 5:
+        upd = new THREE.Sprite(mat5);
+        break;
+      case 6:
+        upd = new THREE.Sprite(mat6);
+        break;
+      case 7:
+        upd = new THREE.Sprite(mat7);
+        break;
+      case 8:
+        upd = new THREE.Sprite(mat8);
+        break;
+      case 9:
+        upd = new THREE.Sprite(mat9);
+        break;
+    }
+    scene.add(upd);
   }
 }
   window.addEventListener('DOMContentLoaded', init);
