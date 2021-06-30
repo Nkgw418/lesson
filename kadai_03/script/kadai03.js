@@ -109,6 +109,10 @@ const init = function() {
   m_bPillow.bumpMap = bump_bPillow;
   m_bPillow.bumpscale = 0.2;
 
+  const bump_floor = textureLoader.load("img/floor-bump.png");
+  m_floor.bumpMap = bump_floor;
+  m_floor.bumpscale = 0.2;
+
   //椅子
   const chair = new THREE.Group();
 
