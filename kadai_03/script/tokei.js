@@ -16,6 +16,7 @@ const init = function() {
   const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
   camera.position.set(40,0,0);
 
+  //秒針
   const g_second = new THREE.BoxGeometry(0.1,10,0.1);
   const m_second = new THREE.MeshPhongMaterial({ color: 0xff0000 });
   const second = new THREE.Mesh(g_second, m_second);
@@ -23,6 +24,7 @@ const init = function() {
   const pivot_s = new THREE.Object3D();
   pivot_s.add(second);
 
+  //分針
   const g_minute = new THREE.BoxGeometry(0.5,10,0.5);
   const m_minute = new THREE.MeshPhongMaterial({ color: 0x808080 });
   const minute = new THREE.Mesh(g_minute, m_minute);
@@ -30,6 +32,7 @@ const init = function() {
   const pivot_m = new THREE.Object3D();
   pivot_m.add(minute);
 
+  //時針
   const g_hour = new THREE.BoxGeometry(0.5,5,0.5);
   const m_hour = new THREE.MeshPhongMaterial({ color: 0x808080 });
   const hour = new THREE.Mesh(g_hour, m_hour);
@@ -37,12 +40,12 @@ const init = function() {
   const pivot_h = new THREE.Object3D();
   pivot_h.add(hour);
 
+  //中心の丸いやつ
   const g_center = new THREE.CylinderGeometry(0.5,0.5,0.5,32)
   const m_center = new THREE.MeshPhongMaterial({ color: 0x808080 });
   const center = new THREE.Mesh(g_center, m_center);
   center.rotation.z = Math.PI/2;
   scene.add(center);
-
 
   // テクスチャー読み込み
   const textureLoader = new THREE.TextureLoader();
@@ -81,8 +84,6 @@ const init = function() {
   scene.add(pivot_m);
   scene.add(pivot_h);
 
-
-
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight1.position.set(5, 10, 5);
@@ -96,9 +97,6 @@ const init = function() {
   // コントローラーを作成
   const controls_c = new THREE.OrbitControls(camera,document.body);
   const controls_l = new THREE.OrbitControls(directionalLight1,document.body);
-
-
-
 
   // 初回実行
   const update = function() {
