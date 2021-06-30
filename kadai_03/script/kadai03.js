@@ -84,7 +84,7 @@ const init = function() {
       new THREE.MeshPhongMaterial({ color: 0x909090 }),
     ];
 
-  const texture_floor = textureLoader.load("img.floor.png");
+  const texture_floor = textureLoader.load("img/floor.png");
   const m_floor = new THREE.MeshPhongMaterial();
   m_floor.map = texture_floor;
 
