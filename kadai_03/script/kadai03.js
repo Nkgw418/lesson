@@ -237,7 +237,14 @@ const init = function() {
   bed.add(bMat);
   bed.add(bPillow);
   bed.add(bCloth);
-  scene.add(bed);
+  
+  //床
+  const g_floor = new THREE.PlaneGeometry(36,27);
+
+  const m_floor = new THREE.MeshPhongMaterial({color: 982365});
+
+  const floor = new THREE.Mesh(g_floor, m_floor);
+  floor.rotation.x = Math.PI / -2;
 
   const all = new THREE.Group();
   all.add(helper);
@@ -247,6 +254,7 @@ const init = function() {
   all.add(monitor);
   all.add(bed);
   all.add(kb);
+  all.add(floor);
   scene.add(all);
 
   // 平行光源1
