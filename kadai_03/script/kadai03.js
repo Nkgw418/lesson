@@ -267,8 +267,6 @@ const init = function() {
   const g_wall = new THREE.PlaneGeometry(36, 25);
   const g_wall2 = new THREE.PlaneGeometry(27, 25);
 
-  
-
   const wall1 = new THREE.Mesh(g_wall, m_wall);
   wall1.position.set(0, 12.5, -14);
 
@@ -321,7 +319,7 @@ const init = function() {
     requestAnimationFrame(update);
 
     renderer.render(scene, camera);
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.lookAt(new THREE.Vector3(0, 5, 0));
   };
   update();
 
