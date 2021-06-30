@@ -16,6 +16,21 @@ const init = function() {
   const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
   camera.position.set(40,0,0);
 
+  //軸
+  const axis = new THREE.AxisHelper(125);
+  axis.castShadow = true;
+
+  //グリッド
+  const grid = new THREE.GridHelper(50,50);
+
+  const grid2 = new THREE.GridHelper(50,50);
+  grid2.rotation.z = Math.PI / 2;
+
+  const helper = new THREE.Group();
+  helper.add(axis);
+  helper.add(grid);
+  helper.add(grid2);
+
   //秒針
   const g_second = new THREE.BoxGeometry(0.1,10,0.1);
   const m_second = new THREE.MeshPhongMaterial({ color: 0xff0000 });
@@ -52,12 +67,39 @@ const init = function() {
   const texture0 = textureLoader.load("img/tokei/zero.png");
   const mat0 = new THREE.SpriteMaterial({ map: texture0,});
   mat0.map = texture0;
+
+  const texture1 = textureLoader.load("img/tokei/one.png");
+  const mat1 = new THREE.SpriteMaterial({ map: texture1,});
+  mat1.map = texture1;
+
+  const texture2 = textureLoader.load("img/tokei/two.png");
+  const mat2 = new THREE.SpriteMaterial({ map: texture2,});
+  mat2.map = texture2;
+
   const texture3 = textureLoader.load("img/tokei/three.png");
   const mat3 = new THREE.SpriteMaterial({ map: texture3,});
   mat3.map = texture3;
+
+  const texture4 = textureLoader.load("img/tokei/four.png");
+  const mat4 = new THREE.SpriteMaterial({ map: texture4,});
+  mat4.map = texture4;
+
+  const texture5 = textureLoader.load("img/tokei/five.png");
+  const mat5 = new THREE.SpriteMaterial({ map: texture5,});
+  mat5.map = texture5;
+
   const texture6 = textureLoader.load("img/tokei/six.png");
   const mat6 = new THREE.SpriteMaterial({ map: texture6,});
   mat6.map = texture6;
+
+  const texture7 = textureLoader.load("img/tokei/seven.png");
+  const mat7 = new THREE.SpriteMaterial({ map: texture7,});
+  mat7.map = texture7;
+
+  const texture8 = textureLoader.load("img/tokei/eight.png");
+  const mat8 = new THREE.SpriteMaterial({ map: texture8,});
+  mat8.map = texture8;
+
   const texture9 = textureLoader.load("img/tokei/nine.png");
   const mat9 = new THREE.SpriteMaterial({ map: texture9,});
   mat9.map = texture9;
@@ -76,6 +118,22 @@ const init = function() {
   moji9.position.set(0,0,11);
   moji9.scale.set(3,3,1);
 
+  //デジタル
+  const minute1 = new THREE.Sprite(mat0);
+  minute1.position.set(0, -13, -1);
+  minute1.scale.set(3,3,1);
+
+  const minute10 = new THREE.Sprite(mat0);
+  minute10.position.set(0, -13, 1);
+  minute10.scale.set(3,3,1);
+
+  
+  
+
+
+
+
+  scene.add(helper);
   scene.add(moji0);
   scene.add(moji3);
   scene.add(moji6);
@@ -104,14 +162,47 @@ const init = function() {
 
     let date = new Date();
     let hours = date.getHours();
-    //let minutes = date.getMinutes();
-    //let seconds = date.getSeconds();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
     let time = date.getTime();
 
     //second.rotation.x += 0.01;
     pivot_s.rotation.x = -1*(Math.PI/30)*((time%60000)/1000);
     pivot_m.rotation.x = -1*(Math.PI/30)*((time%3600000)/60000);
     pivot_h.rotation.x = -1*((Math.PI/6)*hours+(Math.PI/6/60)*((time%3600000)/60000));
+
+    switch(minutes%10){
+      case 0:
+        minute1 = new THREE.Sprite(mat0);
+        break;
+      case 1:
+        minute1 = new THREE.Sprite(mat1);
+        break;
+      case 2:
+        minute1 = new THREE.Sprite(mat2);
+        break;
+      case 3:
+        minute1 = new THREE.Sprite(mat3);
+        break;
+      case 4:
+        minute1 = new THREE.Sprite(mat4);
+        break;
+      case 5:
+        minute1 = new THREE.Sprite(mat5);
+        break;
+      case 6:
+        minute1 = new THREE.Sprite(mat6);
+        break;
+      case 7:
+        minute1 = new THREE.Sprite(mat7);
+        break;
+      case 8:
+        minute1 = new THREE.Sprite(mat8);
+        break;
+      case 9:
+        minute1 = new THREE.Sprite(mat9);
+        break;
+    }
 
     renderer.render(scene, camera);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
