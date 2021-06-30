@@ -118,22 +118,16 @@ const init = function() {
   moji9.position.set(0,0,11);
   moji9.scale.set(3,3,1);
 
-  //デジタル
+  /*//デジタル
   var minute1 = new THREE.Sprite(mat0);
   minute1.position.set(0, -13, -1);
   minute1.scale.set(3,3,1);
 
   const minute10 = new THREE.Sprite(mat0);
   minute10.position.set(0, -13, 1);
-  minute10.scale.set(3,3,1);
+  minute10.scale.set(3,3,1);*/
 
-  
-  
-
-
-
-
-  scene.add(helper);
+  //scene.add(helper);
   scene.add(moji0);
   scene.add(moji3);
   scene.add(moji6);
@@ -141,9 +135,8 @@ const init = function() {
   scene.add(pivot_s);
   scene.add(pivot_m);
   scene.add(pivot_h);
-  scene.add(minute1);
+  //scene.add(minute1);
   
-
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
   directionalLight1.position.set(5, 10, 5);
@@ -174,7 +167,7 @@ const init = function() {
     pivot_h.rotation.x = -1*((Math.PI/6)*hours+(Math.PI/6/60)*((time%3600000)/60000));
 
     
-    clock(minutes%10, minute1);
+    //clock(minutes%10, minute1);
 
     renderer.render(scene, camera);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -190,7 +183,7 @@ const init = function() {
     requestAnimationFrame(tick);
   }
 
-  function clock(jikan, upd){
+  /*function clock(jikan, upd){
     scene.remove(upd);
     switch(jikan){
       case 0:
@@ -225,6 +218,6 @@ const init = function() {
         break;
     }
     scene.add(upd);
-  }
+  }*/
 }
   window.addEventListener('DOMContentLoaded', init);
