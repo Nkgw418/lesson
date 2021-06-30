@@ -244,7 +244,7 @@ const init = function() {
   const m_floor = new THREE.MeshPhongMaterial({color: 982365});
 
   const floor = new THREE.Mesh(g_floor, m_floor);
-  floor.rotation.x = Math.PI / -2;
+  floor.rotation.x = Math.PI / -2;//s
 
   const all = new THREE.Group();
   all.add(helper);
