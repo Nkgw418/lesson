@@ -84,6 +84,10 @@ const init = function() {
       new THREE.MeshPhongMaterial({ color: 0x909090 }),
     ];
 
+  const texture_floor = textureLoader.load("img.floor.png");
+  const m_floor = new THREE.MeshPhongMaterial();
+  m_floor.map = texture_floor;
+
   // バンプマップ読み込み
   const bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
@@ -241,8 +245,6 @@ const init = function() {
   //床
   const g_floor = new THREE.PlaneGeometry(36,27);
 
-  const m_floor = new THREE.MeshPhongMaterial({color: 982365});
-
   const floor = new THREE.Mesh(g_floor, m_floor);
   floor.rotation.x = Math.PI / -2;
   floor.position.set(0, 0, -0.5);
@@ -275,7 +277,7 @@ const init = function() {
   walls.add(wall3);
   walls.add(wall4);
   
-
+  //allグループ
   const all = new THREE.Group();
   all.add(helper);
   all.add(sp_man);
