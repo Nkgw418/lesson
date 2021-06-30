@@ -119,7 +119,7 @@ const init = function() {
   moji9.scale.set(3,3,1);
 
   //デジタル
-  const minute1 = new THREE.Sprite(mat0);
+  var minute1 = new THREE.Sprite(mat0);
   minute1.position.set(0, -13, -1);
   minute1.scale.set(3,3,1);
 
