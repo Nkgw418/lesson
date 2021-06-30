@@ -88,6 +88,10 @@ const init = function() {
   const m_floor = new THREE.MeshPhongMaterial();
   m_floor.map = texture_floor;
 
+  const texture_wall = textureLoader.load("img/wall.jpg");
+  const m_wall = new THREE.MeshPhongMaterial();
+  m_wall.map = texture_wall;
+
   // バンプマップ読み込み
   const bump_Chair = textureLoader.load("img/chair/chair-bump.jpg");
   m_Chair.bumpMap = bump_Chair;
@@ -112,6 +116,10 @@ const init = function() {
   const bump_floor = textureLoader.load("img/floor-bump.png");
   m_floor.bumpMap = bump_floor;
   m_floor.bumpscale = 0.2;
+
+  const bump_wall = textureLoader.load("img/wall-bump.jpg");
+  m_wall.bumpMap = bump_wall;
+  m_wall.bumpscale = 0.2;
 
   //椅子
   const chair = new THREE.Group();
@@ -259,7 +267,7 @@ const init = function() {
   const g_wall = new THREE.PlaneGeometry(36, 25);
   const g_wall2 = new THREE.PlaneGeometry(27, 25);
 
-  const m_wall = new THREE.MeshPhongMaterial({color: 873695});
+  
 
   const wall1 = new THREE.Mesh(g_wall, m_wall);
   wall1.position.set(0, 12.5, -14);
@@ -283,7 +291,7 @@ const init = function() {
   
   //allグループ
   const all = new THREE.Group();
-  all.add(helper);
+  //all.add(helper);
   all.add(sp_man);
   all.add(chair);
   all.add(desk);
