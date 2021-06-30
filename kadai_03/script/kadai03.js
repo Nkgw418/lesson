@@ -244,7 +244,37 @@ const init = function() {
   const m_floor = new THREE.MeshPhongMaterial({color: 982365});
 
   const floor = new THREE.Mesh(g_floor, m_floor);
-  floor.rotation.x = Math.PI / -2;//s
+  floor.rotation.x = Math.PI / -2;
+  floor.position.set(0, 0, -0.5);
+
+  //壁
+  const walls = new THREE.Group();
+
+  const g_wall = new THREE.PlaneGeometry(36, 25);
+  const g_wall2 = new THREE.PlaneGeometry(27, 25);
+
+  const m_wall = new THREE.MeshPhongMaterial({color: 873695});
+
+  const wall1 = new THREE.Mesh(g_wall, m_wall);
+  wall1.position.set(0, 12.5, -14);
+
+  const wall2 = new THREE.Mesh(g_wall2, m_wall);
+  wall2.position.set(-18, 12.5, -0.5);
+  wall2.rotation.y = Math.PI / 2;
+
+  const wall3 = new THREE.Mesh(g_wall, m_wall);
+  wall3.position.set(0, 12.5, 13);
+  wall3.rotation.y = Math.PI ;
+
+  const wall4 = new THREE.Mesh(g_wall2, m_wall);
+  wall4.position.set(18, 12.5, -0.5);
+  wall4.rotation.y = Math.PI / -2;
+
+  walls.add(wall1);
+  walls.add(wall2);
+  walls.add(wall3);
+  walls.add(wall4);
+  
 
   const all = new THREE.Group();
   all.add(helper);
@@ -255,6 +285,7 @@ const init = function() {
   all.add(bed);
   all.add(kb);
   all.add(floor);
+  all.add(walls);
   scene.add(all);
 
   // 平行光源1
