@@ -89,7 +89,7 @@ const init = function() {
   m_floor.map = texture_floor;
 
   const texture_wall = textureLoader.load("img/wall.jpg");
-  const m_wall = new THREE.MeshPhongMaterial();
+  const m_wall = new THREE.MeshStandardMaterial();
   m_wall.map = texture_wall;
 
   // バンプマップ読み込み
