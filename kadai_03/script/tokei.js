@@ -141,6 +141,7 @@ const init = function() {
   scene.add(pivot_s);
   scene.add(pivot_m);
   scene.add(pivot_h);
+  scene.add(minute1);
 
   // 平行光源1
   const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
